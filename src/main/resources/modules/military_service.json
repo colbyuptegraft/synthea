@@ -53,7 +53,8 @@
       "type": "Terminal"
     },
     "No_Military_Service": {
-      "type": "Simple"
+      "type": "Simple",
+      "direct_transition": "Terminal"
     },
     "Military_Officer": {
       "type": "ConditionOnset",
