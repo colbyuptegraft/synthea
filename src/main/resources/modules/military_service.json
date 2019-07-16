@@ -1,0 +1,542 @@
+{
+  "name": "military_service",
+  "remarks": [
+    "A blank module"
+  ],
+  "states": {
+    "Initial": {
+      "type": "Initial",
+      "complex_transition": [
+        {
+          "condition": {
+            "condition_type": "Gender",
+            "gender": "F"
+          },
+          "distributions": [
+            {
+              "transition": "Age_Guard_Officer",
+              "distribution": 0.00308
+            },
+            {
+              "transition": "Age_Guard_Enlisted",
+              "distribution": 0.0112
+            },
+            {
+              "transition": "No_Military_Service",
+              "distribution": 0.98572
+            }
+          ]
+        },
+        {
+          "condition": {
+            "condition_type": "Gender",
+            "gender": "M"
+          },
+          "distributions": [
+            {
+              "transition": "Age_Guard_Officer",
+              "distribution": 0.01092
+            },
+            {
+              "transition": "Age_Guard_Enlisted",
+              "distribution": 0.0448
+            },
+            {
+              "transition": "No_Military_Service",
+              "distribution": 0.94428
+            }
+          ]
+        }
+      ]
+    },
+    "Terminal": {
+      "type": "Terminal"
+    },
+    "No_Military_Service": {
+      "type": "Simple"
+    },
+    "Military_Officer": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "Military_Pay_Grade",
+      "target_encounter": "",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 455551000124109,
+          "display": "United States military pay grade (qualifier value)"
+        },
+        {
+          "system": "SNOMED-CT",
+          "code": 455641000124108,
+          "display": "United States Military Commissioned Officer O1 (qualifier value)"
+        }
+      ],
+      "complex_transition": [
+        {
+          "condition": {
+            "condition_type": "Gender",
+            "gender": "M"
+          },
+          "distributions": [
+            {
+              "transition": "Military_Flight_Physical",
+              "distribution": 0.708
+            },
+            {
+              "transition": "Military_Job_Class_Regular",
+              "distribution": 0.29200000000000004
+            }
+          ]
+        },
+        {
+          "distributions": [
+            {
+              "transition": "Military_Flight_Physical",
+              "distribution": 0.172
+            },
+            {
+              "transition": "Military_Job_Class_Regular",
+              "distribution": 0.8280000000000001
+            }
+          ],
+          "condition": {
+            "condition_type": "Gender",
+            "gender": "F"
+          }
+        }
+      ]
+    },
+    "Age_Guard_Enlisted": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "Age",
+        "operator": ">=",
+        "quantity": 18,
+        "unit": "years",
+        "value": 0
+      },
+      "direct_transition": "Delay_Entry_Enlisted"
+    },
+    "Age_Guard_Officer": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "Age",
+        "operator": ">=",
+        "quantity": 22,
+        "unit": "years",
+        "value": 0
+      },
+      "direct_transition": "Delay_Entry_Officer"
+    },
+    "Delay_Entry_Enlisted": {
+      "type": "Delay",
+      "range": {
+        "low": 0,
+        "high": 21,
+        "unit": "years"
+      },
+      "direct_transition": "Start_Military_Service_Enlisted"
+    },
+    "Delay_Entry_Officer": {
+      "type": "Delay",
+      "direct_transition": "Start_Military_Service_Officer",
+      "range": {
+        "low": 0,
+        "high": 17,
+        "unit": "years"
+      }
+    },
+    "Military_Enlisted": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "Military_Pay_Grade",
+      "target_encounter": "",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 455631000124103,
+          "display": "United States Military enlisted pay grade (qualifier value)"
+        },
+        {
+          "system": "SNOMED-CT",
+          "code": 455971000124107,
+          "display": "United States Military enlisted E1 (qualifier value)"
+        }
+      ],
+      "complex_transition": [
+        {
+          "condition": {
+            "condition_type": "Gender",
+            "gender": "M"
+          },
+          "distributions": [
+            {
+              "transition": "Military_Flight_Physical",
+              "distribution": 0.0938
+            },
+            {
+              "transition": "Military_Job_Class_Regular",
+              "distribution": 0.9062000000000001
+            }
+          ]
+        },
+        {
+          "distributions": [
+            {
+              "transition": "Military_Flight_Physical",
+              "distribution": 0.00619
+            },
+            {
+              "transition": "Military_Job_Class_Regular",
+              "distribution": 0.9938100000000001
+            }
+          ],
+          "condition": {
+            "condition_type": "Gender",
+            "gender": "F"
+          }
+        }
+      ]
+    },
+    "Delay_Officer_Training": {
+      "type": "Delay",
+      "exact": {
+        "quantity": 6,
+        "unit": "weeks"
+      },
+      "distributed_transition": [
+        {
+          "transition": "Military_Officer",
+          "distribution": 0.925
+        },
+        {
+          "transition": "End_Military_Officer_Service",
+          "distribution": 0.075
+        }
+      ]
+    },
+    "Delay_UPT": {
+      "type": "Delay",
+      "range": {
+        "low": 12,
+        "high": 14,
+        "unit": "months"
+      },
+      "distributed_transition": [
+        {
+          "transition": "Military_Job_Class_Flying_Class-II",
+          "distribution": 0.85
+        },
+        {
+          "transition": "Military_Job_Class_Regular",
+          "distribution": 0.15
+        }
+      ]
+    },
+    "Delay_UPT_RPA": {
+      "type": "Delay",
+      "range": {
+        "low": 12,
+        "high": 14,
+        "unit": "months"
+      },
+      "distributed_transition": [
+        {
+          "transition": "Military_Job_Class_RPA_Pilot",
+          "distribution": 0.85
+        },
+        {
+          "transition": "Military_Job_Class_Regular",
+          "distribution": 0.15
+        }
+      ]
+    },
+    "Delay_SWA": {
+      "type": "Delay",
+      "direct_transition": "Military_Job_Class_Special_Warfare",
+      "range": {
+        "low": 20,
+        "high": 24,
+        "unit": "months"
+      }
+    },
+    "End_Military_Officer_Service": {
+      "type": "ConditionEnd",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 266964007,
+          "display": "Left military service (finding)"
+        }
+      ],
+      "condition_onset": "Start_Military_Service_Officer",
+      "direct_transition": "Terminal"
+    },
+    "End_Military_Enlisted_Service": {
+      "type": "ConditionEnd",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 266964007,
+          "display": "Left military service (finding)"
+        }
+      ],
+      "condition_onset": "Start_Military_Service_Enlisted",
+      "direct_transition": "Terminal"
+    },
+    "Start_Military_Service_Officer": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "Military_Service",
+      "target_encounter": "",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 450031000124104,
+          "display": "Military service member of air force (occupation)"
+        }
+      ],
+      "direct_transition": "Delay_Officer_Training"
+    },
+    "Start_Military_Service_Enlisted": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "Military_Service",
+      "target_encounter": "",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 450031000124104,
+          "display": "Military service member of air force (occupation)"
+        }
+      ],
+      "direct_transition": "Delay_Enlisted_Training"
+    },
+    "Delay_Enlisted_Training": {
+      "type": "Delay",
+      "exact": {
+        "quantity": 8,
+        "unit": "weeks"
+      },
+      "distributed_transition": [
+        {
+          "transition": "Military_Enlisted",
+          "distribution": 0.925
+        },
+        {
+          "transition": "End_Military_Enlisted_Service",
+          "distribution": 0.075
+        }
+      ]
+    },
+    "Military_Flight_Physical": {
+      "type": "Encounter",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 200619008,
+          "display": "Comprehensive interview and evaluation (procedure)"
+        }
+      ],
+      "encounter_class": "ambulatory",
+      "complex_transition": [
+        {
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 455621000124101,
+                "display": "United States Military Commissioned Officer pay grade (qualifier value)"
+              }
+            ]
+          },
+          "distributions": [
+            {
+              "transition": "Military_Job_Class_Flying_Class_I/IA",
+              "distribution": 0.412
+            },
+            {
+              "transition": "Military_Job_Class_Flying_Class-II",
+              "distribution": 0.15
+            },
+            {
+              "transition": "Military_Job_Class_Flying_Class_III",
+              "distribution": 0.23
+            },
+            {
+              "transition": "Military_Job_Class_Ground_Based_Controller",
+              "distribution": 0.02
+            },
+            {
+              "transition": "Military_Job_Class_Ground_Based_Controller_Flying_Class_III",
+              "distribution": 0.05
+            },
+            {
+              "transition": "Military_Job_Class_MOD",
+              "distribution": 0.088
+            },
+            {
+              "transition": "Military_Job_Class_Operational_Support",
+              "distribution": 0.05
+            }
+          ]
+        },
+        {
+          "distributions": [
+            {
+              "transition": "Military_Job_Class_Flying_Class-II",
+              "distribution": 0.01
+            },
+            {
+              "transition": "Military_Job_Class_Flying_Class_III",
+              "distribution": 0.75
+            },
+            {
+              "transition": "Military_Job_Class_Ground_Based_Controller",
+              "distribution": 0.15
+            },
+            {
+              "transition": "Military_Job_Class_Ground_Based_Controller_Flying_Class_III",
+              "distribution": 0.06
+            },
+            {
+              "transition": "Military_Job_Class_Operational_Support",
+              "distribution": 0.03
+            }
+          ],
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 455631000124103,
+                "display": "United States Military enlisted pay grade (qualifier value)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Military_Job_Class_Regular": {
+      "type": "SetAttribute",
+      "attribute": "Air_Force_Job_Class",
+      "value": "regular",
+      "direct_transition": "Service_Time"
+    },
+    "Military_Job_Class_RPA_Pilot": {
+      "type": "SetAttribute",
+      "attribute": "Air_Force_Job_Class",
+      "value": "rpa",
+      "direct_transition": "Service_Time"
+    },
+    "Military_Job_Class_Flying_Class_I/IA": {
+      "type": "SetAttribute",
+      "attribute": "Air_Force_Job_Class",
+      "value": "fc_1",
+      "direct_transition": "Delay_UPT"
+    },
+    "Military_Job_Class_Flying_Class-II": {
+      "type": "SetAttribute",
+      "attribute": "Air_Force_Job_Class",
+      "value": "fc_2",
+      "distributed_transition": [
+        {
+          "transition": "Delay_UPT_RPA",
+          "distribution": 0.5
+        },
+        {
+          "transition": "Service_Time",
+          "distribution": 0.5
+        }
+      ]
+    },
+    "Military_Job_Class_Flying_Class_III": {
+      "type": "SetAttribute",
+      "attribute": "Air_Force_Job_Class",
+      "direct_transition": "Service_Time",
+      "value": "fc_3"
+    },
+    "Military_Job_Class_Ground_Based_Controller": {
+      "type": "SetAttribute",
+      "attribute": "Air_Force_Job_Class",
+      "value": "gbc",
+      "distributed_transition": [
+        {
+          "transition": "Delay_SWA",
+          "distribution": 0.05
+        },
+        {
+          "transition": "Service_Time",
+          "distribution": 0.95
+        }
+      ]
+    },
+    "Military_Job_Class_MOD": {
+      "type": "SetAttribute",
+      "attribute": "Air_Force_Job_Class",
+      "value": "mod",
+      "direct_transition": "Service_Time"
+    },
+    "Military_Job_Class_Operational_Support": {
+      "type": "SetAttribute",
+      "attribute": "Air_Force_Job_Class",
+      "value": "op_spt",
+      "direct_transition": "Service_Time"
+    },
+    "Military_Job_Class_Ground_Based_Controller_Flying_Class_III": {
+      "type": "SetAttribute",
+      "attribute": "Air_Force_Job_Class",
+      "value": "gbc/fc_3",
+      "distributed_transition": [
+        {
+          "transition": "Delay_SWA",
+          "distribution": 0.1
+        },
+        {
+          "transition": "Service_Time",
+          "distribution": 0.9
+        }
+      ]
+    },
+    "Military_Job_Class_Special_Warfare": {
+      "type": "SetAttribute",
+      "attribute": "Air_Force_Job_Class",
+      "value": "swa",
+      "direct_transition": "Service_Time"
+    },
+    "Service_Time": {
+      "type": "Delay",
+      "conditional_transition": [
+        {
+          "transition": "End_Military_Officer_Service",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 455621000124101,
+                "display": "United States Military Commissioned Officer pay grade (qualifier value)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "End_Military_Enlisted_Service",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 455631000124103,
+                "display": "United States Military enlisted pay grade (qualifier value)"
+              }
+            ]
+          }
+        }
+      ],
+      "range": {
+        "low": 1,
+        "high": 20,
+        "unit": "years"
+      }
+    }
+  }
+}
