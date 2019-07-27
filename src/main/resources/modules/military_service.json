@@ -110,15 +110,6 @@
       },
       "direct_transition": "Military_Job_Class_RPA_Pilot"
     },
-    "Delay_SWA": {
-      "type": "Delay",
-      "direct_transition": "Military_Job_Class_Special_Warfare",
-      "range": {
-        "low": 20,
-        "high": 24,
-        "unit": "months"
-      }
-    },
     "Delay_Enlisted_Training": {
       "type": "Delay",
       "exact": {
@@ -137,8 +128,9 @@
         }
       ],
       "encounter_class": "ambulatory",
-      "complex_transition": [
+      "conditional_transition": [
         {
+          "transition": "Special_Duty_Officer",
           "condition": {
             "condition_type": "Active Condition",
             "codes": [
@@ -148,61 +140,10 @@
                 "display": "United States Military Commissioned Officer pay grade (qualifier value)"
               }
             ]
-          },
-          "distributions": [
-            {
-              "transition": "Military_Job_Class_Flying_Class_I/IA",
-              "distribution": 0.412
-            },
-            {
-              "transition": "Military_Job_Class_Flying_Class_II",
-              "distribution": 0.15
-            },
-            {
-              "transition": "Military_Job_Class_Flying_Class_III",
-              "distribution": 0.23
-            },
-            {
-              "transition": "Military_Job_Class_Ground_Based_Controller",
-              "distribution": 0.02
-            },
-            {
-              "transition": "Military_Job_Class_Ground_Based_Controller_Flying_Class_III",
-              "distribution": 0.05
-            },
-            {
-              "transition": "Military_Job_Class_MOD",
-              "distribution": 0.088
-            },
-            {
-              "transition": "Military_Job_Class_Operational_Support",
-              "distribution": 0.05
-            }
-          ]
+          }
         },
         {
-          "distributions": [
-            {
-              "transition": "Military_Job_Class_Flying_Class_II",
-              "distribution": 0.01
-            },
-            {
-              "transition": "Military_Job_Class_Flying_Class_III",
-              "distribution": 0.75
-            },
-            {
-              "transition": "Military_Job_Class_Ground_Based_Controller",
-              "distribution": 0.15
-            },
-            {
-              "transition": "Military_Job_Class_Ground_Based_Controller_Flying_Class_III",
-              "distribution": 0.06
-            },
-            {
-              "transition": "Military_Job_Class_Operational_Support",
-              "distribution": 0.03
-            }
-          ],
+          "transition": "Special_Duty_Enlisted",
           "condition": {
             "condition_type": "Active Condition",
             "codes": [
@@ -252,24 +193,6 @@
       "value": "mod",
       "direct_transition": "End_Flight_Physical_MOD"
     },
-    "Military_Job_Class_Operational_Support": {
-      "type": "SetAttribute",
-      "attribute": "Air_Force_Job_Class",
-      "value": "op_spt",
-      "direct_transition": "End_Flight_Physical_Op_Spt"
-    },
-    "Military_Job_Class_Ground_Based_Controller_Flying_Class_III": {
-      "type": "SetAttribute",
-      "attribute": "Air_Force_Job_Class",
-      "value": "gbc/fc_3",
-      "direct_transition": "End_Flight_Physical_GBC/FC_III"
-    },
-    "Military_Job_Class_Special_Warfare": {
-      "type": "SetAttribute",
-      "attribute": "Air_Force_Job_Class",
-      "value": "swa",
-      "direct_transition": "Active_Military_Service"
-    },
     "Military_Service": {
       "type": "Simple",
       "complex_transition": [
@@ -281,11 +204,11 @@
           "distributions": [
             {
               "transition": "Age_Guard_Officer",
-              "distribution": 0.2053
+              "distribution": 0.1966
             },
             {
               "transition": "Age_Guard_Enlisted",
-              "distribution": 0.7947
+              "distribution": 0.8034
             }
           ]
         },
@@ -293,80 +216,45 @@
           "distributions": [
             {
               "transition": "Age_Guard_Officer",
-              "distribution": 0.0454
+              "distribution": 0.1841
             },
             {
               "transition": "Age_Guard_Enlisted",
-              "distribution": 0.9546
+              "distribution": 0.8159
             }
-          ]
+          ],
+          "condition": {
+            "condition_type": "Gender",
+            "gender": "M"
+          }
         }
       ]
     },
     "End_Flight_Physical_FC_I/IA": {
       "type": "EncounterEnd",
-      "direct_transition": "Delay_UPT"
-    },
-    "End_Flight_Physical_FC_II": {
-      "type": "EncounterEnd",
-      "distributed_transition": [
-        {
-          "transition": "Delay_UPT_RPA",
-          "distribution": 0.5
-        },
-        {
-          "transition": "Active_Military_Service",
-          "distribution": 0.5
-        }
-      ]
+      "direct_transition": "Assign_Air_Force_Job_Class_FC_I/IA"
     },
     "Military_Job_Class_Flying_Class_II": {
       "type": "SetAttribute",
       "attribute": "Air_Force_Job_Class",
       "value": "fc_2",
-      "direct_transition": "End_Flight_Physical_FC_II"
+      "direct_transition": "End_Flight_Physical_Flying_Class_II"
     },
     "End_Flight_Physical_FC_III": {
       "type": "EncounterEnd",
       "direct_transition": "Active_Military_Service"
     },
-    "End_Flight_Physical_GBC/FC_III": {
-      "type": "EncounterEnd",
-      "distributed_transition": [
-        {
-          "transition": "Delay_SWA",
-          "distribution": 0.1
-        },
-        {
-          "transition": "Active_Military_Service",
-          "distribution": 0.9
-        }
-      ]
-    },
     "End_Flight_Physical_MOD": {
-      "type": "EncounterEnd",
-      "direct_transition": "Active_Military_Service"
-    },
-    "End_Flight_Physical_Op_Spt": {
       "type": "EncounterEnd",
       "direct_transition": "Active_Military_Service"
     },
     "End_Flight_Physical_GBC": {
       "type": "EncounterEnd",
-      "distributed_transition": [
-        {
-          "transition": "Delay_SWA",
-          "distribution": 0.05
-        },
-        {
-          "transition": "Active_Military_Service",
-          "distribution": 0.95
-        }
-      ]
+      "direct_transition": "Active_Military_Service"
     },
     "Active_Military_Service": {
       "type": "Simple",
-      "direct_transition": "Annual_Attrition_Rate"
+      "direct_transition": "Assign_Air_Force_Job_Class"
     },
     "Annual_Attrition_Rate": {
       "type": "Delay",
@@ -525,11 +413,11 @@
           "distributions": [
             {
               "transition": "Military_Flight_Physical",
-              "distribution": 0.708
+              "distribution": 0.413
             },
             {
               "transition": "Military_Job_Class_Regular",
-              "distribution": 0.29200000000000004
+              "distribution": 0.587
             }
           ]
         },
@@ -537,11 +425,11 @@
           "distributions": [
             {
               "transition": "Military_Flight_Physical",
-              "distribution": 0.172
+              "distribution": 0.1687
             },
             {
               "transition": "Military_Job_Class_Regular",
-              "distribution": 0.8280000000000001
+              "distribution": 0.8313
             }
           ],
           "condition": {
@@ -571,11 +459,11 @@
           "distributions": [
             {
               "transition": "Military_Flight_Physical",
-              "distribution": 0.0938
+              "distribution": 0.0884
             },
             {
               "transition": "Military_Job_Class_Regular",
-              "distribution": 0.9062000000000001
+              "distribution": 0.9116
             }
           ]
         },
@@ -583,11 +471,11 @@
           "distributions": [
             {
               "transition": "Military_Flight_Physical",
-              "distribution": 0.00619
+              "distribution": 0.1084
             },
             {
               "transition": "Military_Job_Class_Regular",
-              "distribution": 0.9938100000000001
+              "distribution": 0.8916
             }
           ],
           "condition": {
@@ -600,15 +488,268 @@
     "End_Military_Enlisted": {
       "type": "ConditionEnd",
       "codes": [],
-      "direct_transition": "Terminal",
-      "condition_onset": "Start_Military_Officer"
+      "direct_transition": "Set_Veteran",
+      "condition_onset": "Start_Military_Enlisted"
     },
     "End_Military_Officer": {
       "type": "ConditionEnd",
       "codes": [],
       "condition_onset": "Start_Military_Officer",
+      "direct_transition": "Set_Veteran"
+    },
+    "Assign_Air_Force_Job_Class": {
+      "type": "Observation",
+      "category": "social-history",
+      "unit": "",
+      "codes": [
+        {
+          "system": "LOINC",
+          "code": "85658-3",
+          "display": "Occupation [Type]"
+        }
+      ],
+      "direct_transition": "Annual_Attrition_Rate",
+      "attribute": "Air_Force_Job_Class"
+    },
+    "Special_Duty_Officer": {
+      "type": "Simple",
+      "conditional_transition": [
+        {
+          "transition": "Special_Duty_Officer_Female",
+          "condition": {
+            "condition_type": "Gender",
+            "gender": "F"
+          }
+        },
+        {
+          "transition": "Special_Duty_Officer_Male",
+          "condition": {
+            "condition_type": "Gender",
+            "gender": "M"
+          }
+        }
+      ]
+    },
+    "Special_Duty_Enlisted": {
+      "type": "Simple",
+      "conditional_transition": [
+        {
+          "transition": "Special_Duty_Enlisted_Female",
+          "condition": {
+            "condition_type": "Gender",
+            "gender": "F"
+          }
+        },
+        {
+          "transition": "Special_Duty_Enlisted_Male",
+          "condition": {
+            "condition_type": "Gender",
+            "gender": "M"
+          }
+        }
+      ]
+    },
+    "Special_Duty_Officer_Male": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Military_Job_Class_Flying_Class_I/IA",
+          "distribution": 0.0873
+        },
+        {
+          "transition": "Military_Job_Class_Flying_Class_II",
+          "distribution": 0.6785
+        },
+        {
+          "transition": "Military_Job_Class_Flying_Class_III",
+          "distribution": 0.0248
+        },
+        {
+          "transition": "Military_Job_Class_Flying_Class_III_SWA",
+          "distribution": 0.0062
+        },
+        {
+          "transition": "Military_Job_Class_Flying_Class_III_GBC",
+          "distribution": 0.057
+        },
+        {
+          "transition": "Military_Job_Class_Flying_Class_III_GBC_SWA",
+          "distribution": 0.014
+        },
+        {
+          "transition": "Military_Job_Class_Ground_Based_Controller",
+          "distribution": 0.011
+        },
+        {
+          "transition": "Military_Job_Class_MOD",
+          "distribution": 0.04269999999999985
+        },
+        {
+          "transition": "Military_Job_Class_Flying_Class_II_RPA",
+          "distribution": 0.0785
+        }
+      ]
+    },
+    "Special_Duty_Officer_Female": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Military_Job_Class_Flying_Class_I/IA",
+          "distribution": 0.08640000000000003
+        },
+        {
+          "transition": "Military_Job_Class_Flying_Class_II",
+          "distribution": 0.4951
+        },
+        {
+          "transition": "Military_Job_Class_Flying_Class_III",
+          "distribution": 0.1208
+        },
+        {
+          "transition": "Military_Job_Class_Flying_Class_III_GBC",
+          "distribution": 0.1006
+        },
+        {
+          "transition": "Military_Job_Class_Flying_Class_III_SWA",
+          "distribution": 0.0004
+        },
+        {
+          "transition": "Military_Job_Class_Flying_Class_III_GBC_SWA",
+          "distribution": 0.0013
+        },
+        {
+          "transition": "Military_Job_Class_Ground_Based_Controller",
+          "distribution": 0.0283
+        },
+        {
+          "transition": "Military_Job_Class_MOD",
+          "distribution": 0.115
+        },
+        {
+          "transition": "Military_Job_Class_Flying_Class_II_RPA",
+          "distribution": 0.0521
+        }
+      ]
+    },
+    "Special_Duty_Enlisted_Male": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Military_Job_Class_Flying_Class_II_RPA",
+          "distribution": 0.003
+        },
+        {
+          "transition": "Military_Job_Class_Flying_Class_III",
+          "distribution": 0.6246
+        },
+        {
+          "transition": "Military_Job_Class_Flying_Class_III_SWA",
+          "distribution": 0.0342
+        },
+        {
+          "transition": "Military_Job_Class_Ground_Based_Controller",
+          "distribution": 0.2275
+        },
+        {
+          "transition": "Military_Job_Class_Flying_Class_III_GBC_SWA",
+          "distribution": 0.11070000000000002
+        }
+      ]
+    },
+    "Special_Duty_Enlisted_Female": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Military_Job_Class_Flying_Class_II_RPA",
+          "distribution": 0.0003
+        },
+        {
+          "transition": "End_Flight_Physical_FC_III",
+          "distribution": 0.8229
+        },
+        {
+          "transition": "Military_Job_Class_Ground_Based_Controller",
+          "distribution": 0.1766
+        },
+        {
+          "transition": "Military_Job_Class_Flying_Class_III_GBC_SWA",
+          "distribution": 0.000200000000000089
+        }
+      ]
+    },
+    "Military_Job_Class_Flying_Class_III_SWA": {
+      "type": "SetAttribute",
+      "attribute": "Air_Force_Job_Class",
+      "value": "fc_3_swa",
+      "direct_transition": "Military_Job_Class_Flying_Class_III_GBC_SWA"
+    },
+    "Military_Job_Class_Flying_Class_III_GBC_SWA": {
+      "type": "SetAttribute",
+      "attribute": "Air_Force_Job_Class",
+      "value": "fc_3_gbc_swa",
+      "direct_transition": "End_Flight_Physical_FC_III_GBC_SWA"
+    },
+    "Military_Job_Class_Flying_Class_III_GBC": {
+      "type": "SetAttribute",
+      "attribute": "Air_Force_Job_Class",
+      "value": "fc_3_gbc",
+      "direct_transition": "End_Flight_Physical_FC_III_GBC"
+    },
+    "End_Flight_Physical_FC_III_GBC": {
+      "type": "EncounterEnd",
+      "direct_transition": "Active_Military_Service"
+    },
+    "End_Flight_Physical_FC_III_GBC_SWA": {
+      "type": "EncounterEnd",
+      "direct_transition": "Active_Military_Service"
+    },
+    "Assign_Air_Force_Job_Class_FC_I/IA": {
+      "type": "Observation",
+      "category": "social-history",
+      "unit": "",
+      "codes": [
+        {
+          "system": "LOINC",
+          "code": "85658-3",
+          "display": "Occupation [Type]"
+        }
+      ],
+      "direct_transition": "Delay_UPT",
+      "attribute": "Air_Force_Job_Class"
+    },
+    "Military_Job_Class_Flying_Class_II_RPA": {
+      "type": "SetAttribute",
+      "attribute": "Air_Force_Job_Class",
+      "direct_transition": "End_Flight_Physical_FC_II_RPA",
+      "value": "fc_2"
+    },
+    "End_Flight_Physical_Flying_Class_II": {
+      "type": "EncounterEnd",
+      "direct_transition": "Active_Military_Service"
+    },
+    "End_Flight_Physical_FC_II_RPA": {
+      "type": "EncounterEnd",
+      "direct_transition": "Assign_Air_Force_Job_Class_FC_II_RPA"
+    },
+    "Assign_Air_Force_Job_Class_FC_II_RPA": {
+      "type": "Observation",
+      "category": "social-history",
+      "unit": "",
+      "codes": [
+        {
+          "system": "LOINC",
+          "code": "85658-3",
+          "display": "Occupation [Type]"
+        }
+      ],
+      "direct_transition": "Delay_UPT_RPA",
+      "attribute": "Air_Force_Job_Class"
+    },
+    "Set_Veteran": {
+      "type": "SetAttribute",
+      "attribute": "veteran",
       "direct_transition": "Terminal",
-      "referenced_by_attribute": "text"
+      "value": true
     }
   }
 }
