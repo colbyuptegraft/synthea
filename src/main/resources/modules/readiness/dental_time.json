@@ -366,15 +366,6 @@
           }
         },
         {
-          "transition": "Regular (Non-SDS)",
-          "condition": {
-            "condition_type": "Attribute",
-            "attribute": "Air_Force_Job_Class",
-            "operator": "==",
-            "value": "regular"
-          }
-        },
-        {
           "transition": "RPA",
           "condition": {
             "condition_type": "Attribute",
@@ -382,6 +373,9 @@
             "operator": "==",
             "value": "rpa"
           }
+        },
+        {
+          "transition": "Regular (Non-SDS)"
         }
       ]
     },

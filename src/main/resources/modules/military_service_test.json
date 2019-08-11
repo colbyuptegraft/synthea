@@ -6,43 +6,10 @@
   "states": {
     "Initial": {
       "type": "Initial",
-      "complex_transition": [
-        {
-          "condition": {
-            "condition_type": "Gender",
-            "gender": "M"
-          },
-          "distributions": [
-            {
-              "transition": "Military_Service",
-              "distribution": 0.1
-            },
-            {
-              "transition": "No_Military_Service",
-              "distribution": 0.9
-            }
-          ]
-        },
-        {
-          "distributions": [
-            {
-              "transition": "Military_Service",
-              "distribution": 0.025
-            },
-            {
-              "transition": "No_Military_Service",
-              "distribution": 0.975
-            }
-          ]
-        }
-      ]
+      "direct_transition": "Military_Service"
     },
     "Terminal": {
       "type": "Terminal"
-    },
-    "No_Military_Service": {
-      "type": "Simple",
-      "direct_transition": "Terminal"
     },
     "Age_Guard_Enlisted": {
       "type": "Guard",
@@ -99,7 +66,7 @@
         "high": 14,
         "unit": "months"
       },
-      "direct_transition": "Military_Job_Class_Flying_Class_II"
+      "direct_transition": "Military_Job_Class_Flying_Class_I_to_II"
     },
     "Delay_UPT_RPA": {
       "type": "Delay",
@@ -169,12 +136,6 @@
       "value": "rpa",
       "direct_transition": "Active_Military_Service"
     },
-    "Military_Job_Class_Flying_Class_I/IA": {
-      "type": "SetAttribute",
-      "attribute": "Air_Force_Job_Class",
-      "value": "fc_1",
-      "direct_transition": "End_Flight_Physical_FC_I/IA"
-    },
     "Military_Job_Class_Flying_Class_III": {
       "type": "SetAttribute",
       "attribute": "Air_Force_Job_Class",
@@ -229,16 +190,6 @@
           }
         }
       ]
-    },
-    "End_Flight_Physical_FC_I/IA": {
-      "type": "EncounterEnd",
-      "direct_transition": "Assign_Air_Force_Job_Class_FC_I/IA"
-    },
-    "Military_Job_Class_Flying_Class_II": {
-      "type": "SetAttribute",
-      "attribute": "Air_Force_Job_Class",
-      "value": "fc_2",
-      "direct_transition": "End_Flight_Physical_Flying_Class_II"
     },
     "End_Flight_Physical_FC_III": {
       "type": "EncounterEnd",
@@ -553,7 +504,7 @@
       "type": "Simple",
       "distributed_transition": [
         {
-          "transition": "Military_Job_Class_Flying_Class_I/IA",
+          "transition": "Military_Job_Class_Flying_Class_I",
           "distribution": 0.0873
         },
         {
@@ -594,7 +545,7 @@
       "type": "Simple",
       "distributed_transition": [
         {
-          "transition": "Military_Job_Class_Flying_Class_I/IA",
+          "transition": "Military_Job_Class_Flying_Class_I",
           "distribution": 0.08640000000000003
         },
         {
@@ -664,7 +615,7 @@
           "distribution": 0.0003
         },
         {
-          "transition": "End_Flight_Physical_FC_III",
+          "transition": "Military_Job_Class_Flying_Class_III",
           "distribution": 0.8229
         },
         {
@@ -703,20 +654,6 @@
       "type": "EncounterEnd",
       "direct_transition": "Active_Military_Service"
     },
-    "Assign_Air_Force_Job_Class_FC_I/IA": {
-      "type": "Observation",
-      "category": "social-history",
-      "unit": "",
-      "codes": [
-        {
-          "system": "LOINC",
-          "code": "85658-3",
-          "display": "Occupation [Type]"
-        }
-      ],
-      "direct_transition": "Delay_UPT",
-      "attribute": "Air_Force_Job_Class"
-    },
     "Military_Job_Class_Flying_Class_II_RPA": {
       "type": "SetAttribute",
       "attribute": "Air_Force_Job_Class",
@@ -750,6 +687,42 @@
       "attribute": "veteran",
       "direct_transition": "Terminal",
       "value": true
+    },
+    "Military_Job_Class_Flying_Class_II": {
+      "type": "SetAttribute",
+      "attribute": "Air_Force_Job_Class",
+      "direct_transition": "End_Flight_Physical_Flying_Class_II",
+      "value": "fc_2"
+    },
+    "Military_Job_Class_Flying_Class_I": {
+      "type": "SetAttribute",
+      "attribute": "Air_Force_Job_Class",
+      "value": "fc_1",
+      "direct_transition": "End_Flight_Physical_FC_I"
+    },
+    "End_Flight_Physical_FC_I": {
+      "type": "EncounterEnd",
+      "direct_transition": "Assign_Air_Force_Job_Class_FC_I"
+    },
+    "Assign_Air_Force_Job_Class_FC_I": {
+      "type": "Observation",
+      "category": "social-history",
+      "unit": "",
+      "codes": [
+        {
+          "system": "LOINC",
+          "code": "85658-3",
+          "display": "Occupation [Type]"
+        }
+      ],
+      "direct_transition": "Delay_UPT",
+      "attribute": "Air_Force_Job_Class"
+    },
+    "Military_Job_Class_Flying_Class_I_to_II": {
+      "type": "SetAttribute",
+      "attribute": "Air_Force_Job_Class",
+      "value": "fc_2",
+      "direct_transition": "Active_Military_Service"
     }
   }
 }

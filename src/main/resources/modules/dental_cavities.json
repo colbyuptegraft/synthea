@@ -9,344 +9,6 @@
       "type": "Initial",
       "direct_transition": "Wait_Until_Teeth"
     },
-    "Cavity_Diagnosis": {
-      "type": "ConditionOnset",
-      "assign_to_attribute": "Dental",
-      "target_encounter": "Initial_Dental_Visit",
-      "codes": [
-        {
-          "system": "SNOMED-CT",
-          "code": 80967001,
-          "display": "Dental caries (disorder)"
-        }
-      ],
-      "conditional_transition": [
-        {
-          "transition": "End_Medically_Ready",
-          "condition": {
-            "condition_type": "Active Condition",
-            "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 450031000124104,
-                "display": "Military service member of air force (occupation)"
-              }
-            ]
-          }
-        },
-        {
-          "transition": "End_Initial_Dental_Visit_With_Cavity"
-        }
-      ]
-    },
-    "FC_1": {
-      "type": "Simple",
-      "distributed_transition": [
-        {
-          "transition": "Other_Dental_Diagnosis",
-          "distribution": {
-            "attribute": "attribute",
-            "default": 0.0043
-          }
-        },
-        {
-          "transition": "Cavity_Diagnosis",
-          "distribution": 0.0143
-        },
-        {
-          "transition": "No_Dental_Diagnosis",
-          "distribution": 0.9814
-        }
-      ]
-    },
-    "Other_Dental_Diagnosis": {
-      "type": "ConditionOnset",
-      "assign_to_attribute": "Dental",
-      "codes": [
-        {
-          "system": "SNOMED-CT",
-          "code": 234947003,
-          "display": "Tooth disorder (disorder)"
-        }
-      ],
-      "direct_transition": "End_Medically_Ready",
-      "target_encounter": "Initial_Dental_Visit"
-    },
-    "FC_2": {
-      "type": "Simple",
-      "distributed_transition": [
-        {
-          "transition": "Other_Dental_Diagnosis",
-          "distribution": 0.005
-        },
-        {
-          "transition": "Cavity_Diagnosis",
-          "distribution": 0.0141
-        },
-        {
-          "transition": "No_Dental_Diagnosis",
-          "distribution": 0.9809000000000001
-        }
-      ]
-    },
-    "FC_3": {
-      "type": "Simple",
-      "distributed_transition": [
-        {
-          "transition": "Other_Dental_Diagnosis",
-          "distribution": 0.0118
-        },
-        {
-          "transition": "Cavity_Diagnosis",
-          "distribution": 0.0248
-        },
-        {
-          "transition": "No_Dental_Diagnosis",
-          "distribution": 0.9634
-        }
-      ]
-    },
-    "FC_3_GBC": {
-      "type": "Simple",
-      "distributed_transition": [
-        {
-          "transition": "Other_Dental_Diagnosis",
-          "distribution": 0.0039
-        },
-        {
-          "transition": "Cavity_Diagnosis",
-          "distribution": 0.0161
-        },
-        {
-          "transition": "No_Dental_Diagnosis",
-          "distribution": 0.98
-        }
-      ]
-    },
-    "FC_3_GBC_SWA": {
-      "type": "Simple",
-      "distributed_transition": [
-        {
-          "transition": "Other_Dental_Diagnosis",
-          "distribution": 0.0038
-        },
-        {
-          "transition": "Cavity_Diagnosis",
-          "distribution": 0.0284
-        },
-        {
-          "transition": "No_Dental_Diagnosis",
-          "distribution": 0.9678
-        }
-      ]
-    },
-    "FC_3_SWA": {
-      "type": "Simple",
-      "distributed_transition": [
-        {
-          "transition": "Other_Dental_Diagnosis",
-          "distribution": 0.0155
-        },
-        {
-          "transition": "Cavity_Diagnosis",
-          "distribution": 0.0171
-        },
-        {
-          "transition": "No_Dental_Diagnosis",
-          "distribution": 0.9674
-        }
-      ]
-    },
-    "GBC": {
-      "type": "Simple",
-      "distributed_transition": [
-        {
-          "transition": "Other_Dental_Diagnosis",
-          "distribution": 0.0086
-        },
-        {
-          "transition": "Cavity_Diagnosis",
-          "distribution": 0.0342
-        },
-        {
-          "transition": "No_Dental_Diagnosis",
-          "distribution": 0.9572
-        }
-      ]
-    },
-    "MOD": {
-      "type": "Simple",
-      "distributed_transition": [
-        {
-          "transition": "Other_Dental_Diagnosis",
-          "distribution": 0.0127
-        },
-        {
-          "transition": "Cavity_Diagnosis",
-          "distribution": 0.0127
-        },
-        {
-          "transition": "No_Dental_Diagnosis",
-          "distribution": 0.9746
-        }
-      ]
-    },
-    "RPA": {
-      "type": "Simple",
-      "distributed_transition": [
-        {
-          "transition": "Other_Dental_Diagnosis",
-          "distribution": 0.0012
-        },
-        {
-          "transition": "Cavity_Diagnosis",
-          "distribution": 0.0072
-        },
-        {
-          "transition": "No_Dental_Diagnosis",
-          "distribution": 0.9916
-        }
-      ]
-    },
-    "Job_Class_Check": {
-      "type": "Simple",
-      "conditional_transition": [
-        {
-          "transition": "FC_1",
-          "condition": {
-            "condition_type": "Attribute",
-            "attribute": "Air_Force_Job_Class",
-            "operator": "==",
-            "value": "fc_1"
-          }
-        },
-        {
-          "transition": "FC_2",
-          "condition": {
-            "condition_type": "Attribute",
-            "attribute": "Air_Force_Job_Class",
-            "operator": "==",
-            "value": "fc_2"
-          }
-        },
-        {
-          "transition": "FC_3",
-          "condition": {
-            "condition_type": "Attribute",
-            "attribute": "Air_Force_Job_Class",
-            "operator": "==",
-            "value": "fc_3"
-          }
-        },
-        {
-          "transition": "FC_3_GBC",
-          "condition": {
-            "condition_type": "Attribute",
-            "attribute": "Air_Force_Job_Class",
-            "operator": "==",
-            "value": "fc_3_gbc"
-          }
-        },
-        {
-          "transition": "FC_3_GBC_SWA",
-          "condition": {
-            "condition_type": "Attribute",
-            "attribute": "Air_Force_Job_Class",
-            "operator": "==",
-            "value": "fc_3_gbc_swa"
-          }
-        },
-        {
-          "transition": "FC_3_SWA",
-          "condition": {
-            "condition_type": "Attribute",
-            "attribute": "Air_Force_Job_Class",
-            "operator": "==",
-            "value": "fc_3_swa"
-          }
-        },
-        {
-          "transition": "GBC",
-          "condition": {
-            "condition_type": "Attribute",
-            "attribute": "Air_Force_Job_Class",
-            "operator": "==",
-            "value": "gbc"
-          }
-        },
-        {
-          "transition": "MOD",
-          "condition": {
-            "condition_type": "Attribute",
-            "attribute": "Air_Force_Job_Class",
-            "operator": "==",
-            "value": "mod"
-          }
-        },
-        {
-          "transition": "Regular (Non-SDS)",
-          "condition": {
-            "condition_type": "Attribute",
-            "attribute": "Air_Force_Job_Class",
-            "operator": "==",
-            "value": "regular"
-          }
-        },
-        {
-          "transition": "RPA",
-          "condition": {
-            "condition_type": "Attribute",
-            "attribute": "Air_Force_Job_Class",
-            "operator": "==",
-            "value": "rpa"
-          }
-        }
-      ]
-    },
-    "No_Dental_Diagnosis": {
-      "type": "Simple",
-      "direct_transition": "End_Dental_Visit_No_Cavity"
-    },
-    "Regular (Non-SDS)": {
-      "type": "Simple",
-      "distributed_transition": [
-        {
-          "transition": "Other_Dental_Diagnosis",
-          "distribution": 0.0098
-        },
-        {
-          "transition": "Cavity_Diagnosis",
-          "distribution": 0.0312
-        },
-        {
-          "transition": "No_Dental_Diagnosis",
-          "distribution": 0.9590000000000001
-        }
-      ]
-    },
-    "End_Medically_Ready": {
-      "type": "ConditionEnd",
-      "codes": [
-        {
-          "system": "SNOMED-CT",
-          "code": 429011000124100,
-          "display": "Physically able to work (finding)"
-        }
-      ],
-      "direct_transition": "Start_Not_Medically_Ready"
-    },
-    "Start_Not_Medically_Ready": {
-      "type": "ConditionOnset",
-      "assign_to_attribute": "",
-      "codes": [
-        {
-          "system": "SNOMED-CT",
-          "code": 225888002,
-          "display": "Unfit to return to work (finding)"
-        }
-      ],
-      "direct_transition": "End_Initial_Dental_Visit_With_Cavity"
-    },
     "Wait_Until_Teeth": {
       "type": "Guard",
       "allow": {
@@ -365,6 +27,19 @@
         "unit": "months"
       },
       "direct_transition": "Initial_Dental_Visit"
+    },
+    "Cavity_Diagnosis": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "Cavity",
+      "target_encounter": "Initial_Dental_Visit",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 80967001,
+          "display": "Dental caries (disorder)"
+        }
+      ],
+      "direct_transition": "End_Initial_Dental_Visit_With_Cavity"
     },
     "Administer_Novocaine": {
       "type": "MedicationOrder",
@@ -500,7 +175,7 @@
     },
     "Is_Military": {
       "type": "Simple",
-      "direct_transition": "Job_Class_Check"
+      "direct_transition": "Call_Dental_Rates_Submodule"
     },
     "Is_Civilian": {
       "type": "Simple",
@@ -515,6 +190,41 @@
         }
       ]
     },
+    "Call_Dental_Rates_Submodule": {
+      "type": "CallSubmodule",
+      "submodule": "readiness/dental_rates",
+      "conditional_transition": [
+        {
+          "transition": "End_Initial_Dental_Visit_With_Cavity",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 80967001,
+                "display": "Dental caries (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "End_Initial_Dental_Visit_With_Cavity",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 234947003,
+                "display": "Tooth disorder (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "End_Dental_Visit_No_Cavity"
+        }
+      ]
+    },
     "Is_Military_2": {
       "type": "Simple",
       "direct_transition": "Call_Dental_Time_Submodule"
@@ -522,6 +232,11 @@
     "Is_Civilian_2": {
       "type": "Simple",
       "direct_transition": "Wait_For_Appointment"
+    },
+    "Call_Dental_Time_Submodule": {
+      "type": "CallSubmodule",
+      "submodule": "readiness/dental_time",
+      "direct_transition": "Followup_Dental_Visit"
     },
     "Is_Military_3": {
       "type": "Simple",
@@ -573,9 +288,36 @@
     },
     "End_Dental_Caries": {
       "type": "ConditionEnd",
-      "codes": [],
-      "direct_transition": "End_Not_Medically_Ready",
-      "condition_onset": "Cavity_Diagnosis"
+      "direct_transition": "End_Not_Medically_Ready_Caries",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 80967001,
+          "display": "Dental caries (disorder)"
+        }
+      ]
+    },
+    "End_Not_Medically_Ready_Caries": {
+      "type": "ConditionEnd",
+      "direct_transition": "Start_Medically_Ready",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "225888002|:42752001|=80967001",
+          "display": "Unfit Due to Dental Caries"
+        }
+      ]
+    },
+    "End_Other_Dental_Condition": {
+      "type": "ConditionEnd",
+      "direct_transition": "Start_Medically_Ready",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "225888002|:42752001|=234947003",
+          "display": "Unfit Due to Other Dental Disorder"
+        }
+      ]
     },
     "End_Initial_Dental_Visit_With_Cavity": {
       "type": "EncounterEnd",
@@ -597,23 +339,6 @@
           "transition": "Is_Civilian_2"
         }
       ]
-    },
-    "End_Not_Medically_Ready": {
-      "type": "ConditionEnd",
-      "direct_transition": "Start_Medically_Ready",
-      "codes": [],
-      "condition_onset": "Start_Not_Medically_Ready"
-    },
-    "End_Other_Dental_Condition": {
-      "type": "ConditionEnd",
-      "direct_transition": "End_Not_Medically_Ready",
-      "codes": [],
-      "condition_onset": "Other_Dental_Diagnosis"
-    },
-    "Call_Dental_Time_Submodule": {
-      "type": "CallSubmodule",
-      "submodule": "readiness/dental_time",
-      "direct_transition": "Followup_Dental_Visit"
     }
   }
 }
