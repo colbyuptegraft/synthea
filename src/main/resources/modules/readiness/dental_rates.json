@@ -1,18 +1,19 @@
 {
-  "name": "Dental Cavities",
+  "name": "dental_rates",
   "remarks": [
-    "This module simulates dental cavities.",
-    ""
+    "A blank module"
   ],
   "states": {
     "Initial": {
       "type": "Initial",
-      "direct_transition": "Wait_Until_Teeth"
+      "direct_transition": "Job_Class_Check"
+    },
+    "Terminal": {
+      "type": "Terminal"
     },
     "Cavity_Diagnosis": {
       "type": "ConditionOnset",
-      "assign_to_attribute": "Dental",
-      "target_encounter": "Initial_Dental_Visit",
+      "assign_to_attribute": "",
       "codes": [
         {
           "system": "SNOMED-CT",
@@ -20,24 +21,7 @@
           "display": "Dental caries (disorder)"
         }
       ],
-      "conditional_transition": [
-        {
-          "transition": "End_Medically_Ready",
-          "condition": {
-            "condition_type": "Active Condition",
-            "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 450031000124104,
-                "display": "Military service member of air force (occupation)"
-              }
-            ]
-          }
-        },
-        {
-          "transition": "End_Initial_Dental_Visit_With_Cavity"
-        }
-      ]
+      "direct_transition": "End_Medically_Ready"
     },
     "FC_1": {
       "type": "Simple",
@@ -61,7 +45,7 @@
     },
     "Other_Dental_Diagnosis": {
       "type": "ConditionOnset",
-      "assign_to_attribute": "Dental",
+      "assign_to_attribute": "",
       "codes": [
         {
           "system": "SNOMED-CT",
@@ -69,8 +53,7 @@
           "display": "Tooth disorder (disorder)"
         }
       ],
-      "direct_transition": "End_Medically_Ready",
-      "target_encounter": "Initial_Dental_Visit"
+      "direct_transition": "End_Medically_Ready"
     },
     "FC_2": {
       "type": "Simple",
@@ -305,7 +288,7 @@
     },
     "No_Dental_Diagnosis": {
       "type": "Simple",
-      "direct_transition": "End_Dental_Visit_No_Cavity"
+      "direct_transition": "Terminal"
     },
     "Regular (Non-SDS)": {
       "type": "Simple",
@@ -333,201 +316,9 @@
           "display": "Physically able to work (finding)"
         }
       ],
-      "direct_transition": "Start_Not_Medically_Ready"
-    },
-    "Start_Not_Medically_Ready": {
-      "type": "ConditionOnset",
-      "assign_to_attribute": "",
-      "codes": [
-        {
-          "system": "SNOMED-CT",
-          "code": 225888002,
-          "display": "Unfit to return to work (finding)"
-        }
-      ],
-      "direct_transition": "End_Initial_Dental_Visit_With_Cavity"
-    },
-    "Wait_Until_Teeth": {
-      "type": "Guard",
-      "allow": {
-        "condition_type": "Age",
-        "operator": ">",
-        "quantity": 5,
-        "unit": "years"
-      },
-      "direct_transition": "Wait_Until_Dental_Visit"
-    },
-    "Wait_Until_Dental_Visit": {
-      "type": "Delay",
-      "range": {
-        "low": 11,
-        "high": 15,
-        "unit": "months"
-      },
-      "direct_transition": "Initial_Dental_Visit"
-    },
-    "Administer_Novocaine": {
-      "type": "MedicationOrder",
-      "codes": [
-        {
-          "system": "RxNorm",
-          "code": 207584,
-          "display": "Procaine 10 MG/ML Injectable Solution [Novocaine]"
-        }
-      ],
-      "direct_transition": "Cavity_Filling",
-      "administration": true,
-      "reason": "Cavity_Diagnosis"
-    },
-    "Cavity_Filling": {
-      "type": "Procedure",
-      "codes": [
-        {
-          "system": "SNOMED-CT",
-          "code": 445337000,
-          "display": "Drilling and filling of cavity of tooth (procedure)"
-        }
-      ],
-      "duration": {
-        "low": 20,
-        "high": 40,
-        "unit": "minutes"
-      },
-      "reason": "Cavity_Diagnosis",
       "conditional_transition": [
         {
-          "transition": "Is_Military_3",
-          "condition": {
-            "condition_type": "Active Condition",
-            "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 450031000124104,
-                "display": "Military service member of air force (occupation)"
-              }
-            ]
-          }
-        },
-        {
-          "transition": "Is_Civilian_3"
-        }
-      ]
-    },
-    "Initial_Dental_Visit": {
-      "type": "Encounter",
-      "encounter_class": "ambulatory",
-      "reason": "",
-      "codes": [
-        {
-          "system": "SNOMED-CT",
-          "code": 34043003,
-          "display": "Dental consultation and report (procedure)"
-        }
-      ],
-      "conditional_transition": [
-        {
-          "transition": "Is_Military",
-          "condition": {
-            "condition_type": "Active Condition",
-            "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 450031000124104,
-                "display": "Military service member of air force (occupation)"
-              }
-            ]
-          }
-        },
-        {
-          "transition": "Is_Civilian"
-        }
-      ]
-    },
-    "No_Cavity_Diagnosis": {
-      "type": "Simple",
-      "direct_transition": "End_Dental_Visit_No_Cavity"
-    },
-    "End_Dental_Visit_No_Cavity": {
-      "type": "EncounterEnd",
-      "direct_transition": "Wait_Until_Dental_Visit"
-    },
-    "Wait_For_Appointment": {
-      "type": "Delay",
-      "direct_transition": "Followup_Dental_Visit",
-      "range": {
-        "low": 0,
-        "high": 45,
-        "unit": "days"
-      }
-    },
-    "Followup_Dental_Visit": {
-      "type": "Encounter",
-      "encounter_class": "ambulatory",
-      "codes": [
-        {
-          "system": "SNOMED-CT",
-          "code": 34043003,
-          "display": "Dental consultation and report (procedure)"
-        }
-      ],
-      "distributed_transition": [
-        {
-          "transition": "Administer_Novocaine",
-          "distribution": 0.5
-        },
-        {
-          "transition": "Cavity_Filling",
-          "distribution": 0.5
-        }
-      ]
-    },
-    "End_Followup_Dental_Visit": {
-      "type": "EncounterEnd",
-      "direct_transition": "Wait_Until_Dental_Visit"
-    },
-    "Start_Medically_Ready": {
-      "type": "ConditionOnset",
-      "assign_to_attribute": "Medical_Readiness",
-      "target_encounter": "Followup_Dental_Visit",
-      "codes": [
-        {
-          "system": "SNOMED-CT",
-          "code": 429011000124100,
-          "display": "Physically able to work (finding)"
-        }
-      ],
-      "direct_transition": "End_Followup_Dental_Visit"
-    },
-    "Is_Military": {
-      "type": "Simple",
-      "direct_transition": "Job_Class_Check"
-    },
-    "Is_Civilian": {
-      "type": "Simple",
-      "distributed_transition": [
-        {
-          "transition": "Cavity_Diagnosis",
-          "distribution": 0.01
-        },
-        {
-          "transition": "No_Cavity_Diagnosis",
-          "distribution": 0.99
-        }
-      ]
-    },
-    "Is_Military_2": {
-      "type": "Simple",
-      "direct_transition": "Call_Dental_Time_Submodule"
-    },
-    "Is_Civilian_2": {
-      "type": "Simple",
-      "direct_transition": "Wait_For_Appointment"
-    },
-    "Is_Military_3": {
-      "type": "Simple",
-      "conditional_transition": [
-        {
-          "transition": "Caries",
+          "transition": "Start_Not_Medically_Ready_Caries",
           "condition": {
             "condition_type": "Active Condition",
             "codes": [
@@ -540,7 +331,7 @@
           }
         },
         {
-          "transition": "Other_Dental_Condition",
+          "transition": "Start_Not_Medically_Ready_Other_Dental",
           "condition": {
             "condition_type": "Active Condition",
             "codes": [
@@ -554,66 +345,29 @@
         }
       ]
     },
-    "Is_Civilian_3": {
-      "type": "Simple",
-      "direct_transition": "Dental_Caries_Resolved_Civilian"
-    },
-    "Dental_Caries_Resolved_Civilian": {
-      "type": "ConditionEnd",
-      "direct_transition": "End_Followup_Dental_Visit",
-      "condition_onset": "Cavity_Diagnosis"
-    },
-    "Caries": {
-      "type": "Simple",
-      "direct_transition": "End_Dental_Caries"
-    },
-    "Other_Dental_Condition": {
-      "type": "Simple",
-      "direct_transition": "End_Other_Dental_Condition"
-    },
-    "End_Dental_Caries": {
-      "type": "ConditionEnd",
-      "codes": [],
-      "direct_transition": "End_Not_Medically_Ready",
-      "condition_onset": "Cavity_Diagnosis"
-    },
-    "End_Initial_Dental_Visit_With_Cavity": {
-      "type": "EncounterEnd",
-      "conditional_transition": [
+    "Start_Not_Medically_Ready_Caries": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "",
+      "codes": [
         {
-          "transition": "Is_Military_2",
-          "condition": {
-            "condition_type": "Active Condition",
-            "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 450031000124104,
-                "display": "Military service member of air force (occupation)"
-              }
-            ]
-          }
-        },
-        {
-          "transition": "Is_Civilian_2"
+          "system": "SNOMED-CT",
+          "code": "225888002|:42752001|=80967001",
+          "display": "Unfit Due to Dental Caries"
         }
-      ]
+      ],
+      "direct_transition": "Terminal"
     },
-    "End_Not_Medically_Ready": {
-      "type": "ConditionEnd",
-      "direct_transition": "Start_Medically_Ready",
-      "codes": [],
-      "condition_onset": "Start_Not_Medically_Ready"
-    },
-    "End_Other_Dental_Condition": {
-      "type": "ConditionEnd",
-      "direct_transition": "End_Not_Medically_Ready",
-      "codes": [],
-      "condition_onset": "Other_Dental_Diagnosis"
-    },
-    "Call_Dental_Time_Submodule": {
-      "type": "CallSubmodule",
-      "submodule": "readiness/dental_time",
-      "direct_transition": "Followup_Dental_Visit"
+    "Start_Not_Medically_Ready_Other_Dental": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "225888002|:42752001|=234947003",
+          "display": "Unfit Due to Other Dental Disorder"
+        }
+      ],
+      "direct_transition": "Terminal"
     }
   }
 }
