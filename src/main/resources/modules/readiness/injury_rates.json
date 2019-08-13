@@ -427,7 +427,8 @@
       ]
     },
     "No_Injury": {
-      "type": "Simple",
+      "type": "SetAttribute",
+      "attribute": "Injury",
       "direct_transition": "Terminal"
     },
     "Foot_and_Ankle": {
@@ -436,32 +437,11 @@
       "codes": [
         {
           "system": "SNOMED-CT",
-          "code": 125604000,
-          "display": "Injury of foot (disorder)"
-        },
-        {
-          "system": "SNOMED-CT",
           "code": 125603006,
           "display": "Injury of ankle (disorder)"
         }
       ],
-      "conditional_transition": [
-        {
-          "condition": {
-            "condition_type": "Active Condition",
-            "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 429011000124100,
-                "display": "Physically able to work (finding)"
-              }
-            ]
-          }
-        },
-        {
-          "transition": "Start_Not_Medically_Ready_Foot_and_Ankle"
-        }
-      ]
+      "direct_transition": "Start_Not_Medically_Ready_Foot_and_Ankle"
     },
     "Hand_and_Wrist": {
       "type": "ConditionOnset",
@@ -471,30 +451,9 @@
           "system": "SNOMED-CT",
           "code": 125598003,
           "display": "Injury of wrist (disorder)"
-        },
-        {
-          "system": "SNOMED-CT",
-          "code": 125599006,
-          "display": "Injury of hand (disorder)"
         }
       ],
-      "conditional_transition": [
-        {
-          "condition": {
-            "condition_type": "Active Condition",
-            "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 429011000124100,
-                "display": "Physically able to work (finding)"
-              }
-            ]
-          }
-        },
-        {
-          "transition": "Start_Not_Medically_Ready_Hand_and_Wrist"
-        }
-      ]
+      "direct_transition": "Start_Not_Medically_Ready_Hand_and_Wrist"
     },
     "Knee": {
       "type": "ConditionOnset",
@@ -546,11 +505,11 @@
     },
     "Start_Not_Medically_Ready_Foot_and_Ankle": {
       "type": "ConditionOnset",
-      "assign_to_attribute": "",
+      "assign_to_attribute": "Unfit_Injury",
       "codes": [
         {
           "system": "SNOMED-CT",
-          "code": "225888002|:42752001|=(125604000,125603006)",
+          "code": "225888002|:42752001|=125603006",
           "display": "Unfit Due to Foot and Ankle Injury"
         }
       ],
@@ -558,11 +517,11 @@
     },
     "Start_Not_Medically_Ready_Hand_and_Wrist": {
       "type": "ConditionOnset",
-      "assign_to_attribute": "",
+      "assign_to_attribute": "Unfit_Injury",
       "codes": [
         {
           "system": "SNOMED-CT",
-          "code": "225888002|:42752001|=(125599006,125598003)",
+          "code": "225888002|:42752001|=125598003",
           "display": "Unfit Due to Hand and Wrist Injury"
         }
       ],
@@ -570,7 +529,6 @@
     },
     "Start_Not_Medically_Ready_Knee": {
       "type": "ConditionOnset",
-      "assign_to_attribute": "",
       "codes": [
         {
           "system": "SNOMED-CT",
@@ -578,11 +536,12 @@
           "display": "Unfit Due to Knee Injury"
         }
       ],
-      "direct_transition": "Terminal"
+      "direct_transition": "Terminal",
+      "assign_to_attribute": "Unfit_Injury"
     },
     "Start_Not_Medically_Ready_Leg": {
       "type": "ConditionOnset",
-      "assign_to_attribute": "",
+      "assign_to_attribute": "Unfit_Injury",
       "codes": [
         {
           "system": "SNOMED-CT",
@@ -594,7 +553,7 @@
     },
     "Start_Not_Medically_Ready_Shoulder": {
       "type": "ConditionOnset",
-      "assign_to_attribute": "",
+      "assign_to_attribute": "Unfit_Injury",
       "codes": [
         {
           "system": "SNOMED-CT",
@@ -606,7 +565,7 @@
     },
     "Start_Not_Medically_Ready_Other_Injury": {
       "type": "ConditionOnset",
-      "assign_to_attribute": "",
+      "assign_to_attribute": "Unfit_Injury",
       "codes": [
         {
           "system": "SNOMED-CT",

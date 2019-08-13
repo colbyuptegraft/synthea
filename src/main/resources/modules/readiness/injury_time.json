@@ -21,11 +21,6 @@
             "codes": [
               {
                 "system": "SNOMED-CT",
-                "code": 125604000,
-                "display": "Injury of foot (disorder)"
-              },
-              {
-                "system": "SNOMED-CT",
                 "code": 125603006,
                 "display": "Injury of ankle (disorder)"
               }
@@ -37,11 +32,6 @@
           "condition": {
             "condition_type": "Active Condition",
             "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 125599006,
-                "display": "Injury of hand (disorder)"
-              },
               {
                 "system": "SNOMED-CT",
                 "code": 125598003,
@@ -114,11 +104,6 @@
             "codes": [
               {
                 "system": "SNOMED-CT",
-                "code": 125604000,
-                "display": "Injury of foot (disorder)"
-              },
-              {
-                "system": "SNOMED-CT",
                 "code": 125603006,
                 "display": "Injury of ankle (disorder)"
               }
@@ -130,11 +115,6 @@
           "condition": {
             "condition_type": "Active Condition",
             "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 125599006,
-                "display": "Injury of hand (disorder)"
-              },
               {
                 "system": "SNOMED-CT",
                 "code": 125598003,
@@ -207,11 +187,6 @@
             "codes": [
               {
                 "system": "SNOMED-CT",
-                "code": 125604000,
-                "display": "Injury of foot (disorder)"
-              },
-              {
-                "system": "SNOMED-CT",
                 "code": 125603006,
                 "display": "Injury of ankle (disorder)"
               }
@@ -223,11 +198,6 @@
           "condition": {
             "condition_type": "Active Condition",
             "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 125599006,
-                "display": "Injury of hand (disorder)"
-              },
               {
                 "system": "SNOMED-CT",
                 "code": 125598003,
@@ -300,11 +270,6 @@
             "codes": [
               {
                 "system": "SNOMED-CT",
-                "code": 125604000,
-                "display": "Injury of foot (disorder)"
-              },
-              {
-                "system": "SNOMED-CT",
                 "code": 125603006,
                 "display": "Injury of ankle (disorder)"
               }
@@ -316,11 +281,6 @@
           "condition": {
             "condition_type": "Active Condition",
             "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 125599006,
-                "display": "Injury of hand (disorder)"
-              },
               {
                 "system": "SNOMED-CT",
                 "code": 125598003,
@@ -393,11 +353,6 @@
             "codes": [
               {
                 "system": "SNOMED-CT",
-                "code": 125604000,
-                "display": "Injury of foot (disorder)"
-              },
-              {
-                "system": "SNOMED-CT",
                 "code": 125603006,
                 "display": "Injury of ankle (disorder)"
               }
@@ -409,11 +364,6 @@
           "condition": {
             "condition_type": "Active Condition",
             "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 125599006,
-                "display": "Injury of hand (disorder)"
-              },
               {
                 "system": "SNOMED-CT",
                 "code": 125598003,
@@ -486,11 +436,6 @@
             "codes": [
               {
                 "system": "SNOMED-CT",
-                "code": 125604000,
-                "display": "Injury of foot (disorder)"
-              },
-              {
-                "system": "SNOMED-CT",
                 "code": 125603006,
                 "display": "Injury of ankle (disorder)"
               }
@@ -502,11 +447,6 @@
           "condition": {
             "condition_type": "Active Condition",
             "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 125599006,
-                "display": "Injury of hand (disorder)"
-              },
               {
                 "system": "SNOMED-CT",
                 "code": 125598003,
@@ -579,11 +519,6 @@
             "codes": [
               {
                 "system": "SNOMED-CT",
-                "code": 125604000,
-                "display": "Injury of foot (disorder)"
-              },
-              {
-                "system": "SNOMED-CT",
                 "code": 125603006,
                 "display": "Injury of ankle (disorder)"
               }
@@ -595,11 +530,6 @@
           "condition": {
             "condition_type": "Active Condition",
             "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 125599006,
-                "display": "Injury of hand (disorder)"
-              },
               {
                 "system": "SNOMED-CT",
                 "code": 125598003,
@@ -672,11 +602,6 @@
             "codes": [
               {
                 "system": "SNOMED-CT",
-                "code": 125604000,
-                "display": "Injury of foot (disorder)"
-              },
-              {
-                "system": "SNOMED-CT",
                 "code": 125603006,
                 "display": "Injury of ankle (disorder)"
               }
@@ -688,11 +613,6 @@
           "condition": {
             "condition_type": "Active Condition",
             "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 125599006,
-                "display": "Injury of hand (disorder)"
-              },
               {
                 "system": "SNOMED-CT",
                 "code": 125598003,
@@ -765,11 +685,6 @@
             "codes": [
               {
                 "system": "SNOMED-CT",
-                "code": 125604000,
-                "display": "Injury of foot (disorder)"
-              },
-              {
-                "system": "SNOMED-CT",
                 "code": 125603006,
                 "display": "Injury of ankle (disorder)"
               }
@@ -781,11 +696,6 @@
           "condition": {
             "condition_type": "Active Condition",
             "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 125599006,
-                "display": "Injury of hand (disorder)"
-              },
               {
                 "system": "SNOMED-CT",
                 "code": 125598003,
@@ -947,11 +857,6 @@
             "codes": [
               {
                 "system": "SNOMED-CT",
-                "code": 125604000,
-                "display": "Injury of foot (disorder)"
-              },
-              {
-                "system": "SNOMED-CT",
                 "code": 125603006,
                 "display": "Injury of ankle (disorder)"
               }
@@ -963,11 +868,6 @@
           "condition": {
             "condition_type": "Active Condition",
             "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 125599006,
-                "display": "Injury of hand (disorder)"
-              },
               {
                 "system": "SNOMED-CT",
                 "code": 125598003,
@@ -1039,7 +939,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Foot_and_Ankle",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1057,7 +957,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Knee",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1075,7 +975,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Leg",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1093,7 +993,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Shoulder",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1111,7 +1011,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Other_Injury",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1129,7 +1029,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Foot_and_Ankle",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1147,7 +1047,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Hand_and_Wrist",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1165,7 +1065,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Knee",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1183,7 +1083,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Leg",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1201,7 +1101,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Shoulder",
+          "transition": "End_Injury",
           "distribution": 1
         },
         {
@@ -1219,7 +1119,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Other_Injury",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1237,7 +1137,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Foot_and_Ankle",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1255,7 +1155,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Hand_and_Wrist",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1273,7 +1173,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Knee",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1291,7 +1191,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Leg",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1309,7 +1209,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Shoulder",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1327,7 +1227,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Other_Injury",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1345,7 +1245,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Foot_and_Ankle",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1363,7 +1263,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Hand_and_Wrist",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1381,7 +1281,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Knee",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1399,7 +1299,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Leg",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1417,7 +1317,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Shoulder",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1435,7 +1335,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Other_Injury",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1453,7 +1353,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Foot_and_Ankle",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1471,7 +1371,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Hand_and_Wrist",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1489,7 +1389,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Knee",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1507,7 +1407,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Leg",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1525,7 +1425,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Shoulder",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1543,7 +1443,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Other_Injury",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1561,7 +1461,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Foot_and_Ankle",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1579,7 +1479,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Hand_and_Wrist",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1597,7 +1497,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Knee",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1615,7 +1515,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Leg",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1633,7 +1533,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Shoulder",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1651,7 +1551,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Other_Injury",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1669,7 +1569,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Foot_and_Ankle",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1687,7 +1587,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Hand_and_Wrist",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1705,7 +1605,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Knee",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1723,7 +1623,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Leg",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1741,7 +1641,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Shoulder",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1759,7 +1659,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Other_Injury",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1777,7 +1677,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Hand_and_Wrist",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1795,7 +1695,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Hand_and_Wrist",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1813,7 +1713,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Knee",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1831,7 +1731,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Leg",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1849,7 +1749,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Shoulder",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1867,7 +1767,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Other_Injury",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1885,7 +1785,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Foot_and_Ankle",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1903,7 +1803,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Hand_and_Wrist",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1921,7 +1821,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Knee",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1939,7 +1839,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Leg",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1957,7 +1857,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Shoulder",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1975,7 +1875,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Other_Injury",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -1993,7 +1893,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Foot_and_Ankle",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -2011,7 +1911,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Hand_and_Wrist",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -2029,7 +1929,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Knee",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -2047,7 +1947,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Leg",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -2065,7 +1965,7 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Shoulder",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
@@ -2083,28 +1983,12 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Other_Injury",
+          "transition": "End_Injury",
           "distribution": 0.9
         },
         {
           "transition": "Wait_Regular_Other_Injury",
           "distribution": 0.1
-        }
-      ]
-    },
-    "End_Foot_and_Ankle": {
-      "type": "ConditionEnd",
-      "direct_transition": "End_Foot_and_Ankle_NMR",
-      "referenced_by_attribute": "Injury"
-    },
-    "End_Foot_and_Ankle_NMR": {
-      "type": "ConditionEnd",
-      "direct_transition": "Terminal",
-      "codes": [
-        {
-          "system": "SNOMED-CT",
-          "code": "225888002|:42752001|=(125604000,125603006)",
-          "display": "Unfit Due to Foot and Ankle Injury"
         }
       ]
     },
@@ -2117,8 +2001,8 @@
       },
       "distributed_transition": [
         {
-          "transition": "End_Hand_and_Wrist",
-          "distribution": 0.9
+          "distribution": 0.9,
+          "transition": "End_Injury"
         },
         {
           "transition": "Wait_FC_1_Hand_and_Wrist",
@@ -2126,86 +2010,20 @@
         }
       ]
     },
-    "End_Knee": {
+    "End_Injury": {
       "type": "ConditionEnd",
-      "referenced_by_attribute": "Injury",
-      "direct_transition": "End_Knee_NMR"
+      "direct_transition": "End_Not_Medically_Ready",
+      "referenced_by_attribute": "Injury"
     },
-    "End_Knee_NMR": {
+    "End_Not_Medically_Ready": {
       "type": "ConditionEnd",
+      "direct_transition": "End_OTC_Pain_Reliever",
+      "referenced_by_attribute": "Unfit_Injury"
+    },
+    "End_OTC_Pain_Reliever": {
+      "type": "MedicationEnd",
       "direct_transition": "Terminal",
-      "codes": [
-        {
-          "system": "SNOMED-CT",
-          "code": "225888002|:42752001|=125601008",
-          "display": "Unfit Due to Knee Injury"
-        }
-      ]
-    },
-    "End_Leg": {
-      "type": "ConditionEnd",
-      "referenced_by_attribute": "Injury",
-      "direct_transition": "End_Leg_NMR"
-    },
-    "End_Leg_NMR": {
-      "type": "ConditionEnd",
-      "direct_transition": "Terminal",
-      "codes": [
-        {
-          "system": "SNOMED-CT",
-          "code": "225888002|:42752001|=125602001",
-          "display": "Unfit Due to Leg Injury"
-        }
-      ]
-    },
-    "End_Hand_and_Wrist": {
-      "type": "ConditionEnd",
-      "referenced_by_attribute": "Injury",
-      "direct_transition": "End_Hand_and_Wrist_NMR"
-    },
-    "End_Hand_and_Wrist_NMR": {
-      "type": "ConditionEnd",
-      "direct_transition": "Terminal",
-      "codes": [
-        {
-          "system": "SNOMED-CT",
-          "code": "225888002|:42752001|=(125599006,125598003)",
-          "display": "Unfit Due to Hand and Wrist Injury"
-        }
-      ]
-    },
-    "End_Shoulder": {
-      "type": "ConditionEnd",
-      "referenced_by_attribute": "Injury",
-      "direct_transition": "End_Shoulder_NMR"
-    },
-    "End_Shoulder_NMR": {
-      "type": "ConditionEnd",
-      "direct_transition": "Terminal",
-      "codes": [
-        {
-          "system": "SNOMED-CT",
-          "code": "225888002|:42752001|=125594001",
-          "display": "Unfit Due to Shoulder Injury"
-        }
-      ]
-    },
-    "End_Other_Injury_NMR": {
-      "type": "ConditionEnd",
-      "referenced_by_attribute": "Injury",
-      "codes": [
-        {
-          "system": "SNOMED-CT",
-          "code": "225888002|:42752001|=417163006",
-          "display": "Unfit Due to Other Injury"
-        }
-      ],
-      "direct_transition": "Terminal"
-    },
-    "End_Other_Injury": {
-      "type": "ConditionEnd",
-      "referenced_by_attribute": "Injury",
-      "direct_transition": "End_Other_Injury_NMR"
+      "referenced_by_attribute": "otc_pain_reliever"
     }
   }
 }

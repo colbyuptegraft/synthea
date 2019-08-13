@@ -37,24 +37,7 @@
   "states": {
     "Initial": {
       "type": "Initial",
-      "conditional_transition": [
-        {
-          "transition": "Is_Military",
-          "condition": {
-            "condition_type": "Active Condition",
-            "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 450031000124104,
-                "display": "Military service member of air force (occupation)"
-              }
-            ]
-          }
-        },
-        {
-          "transition": "Is_Civilian"
-        }
-      ]
+      "direct_transition": "Military_Check"
     },
     "Child_Incidence_Rates": {
       "type": "Simple",
@@ -116,7 +99,7 @@
         },
         {
           "distribution": 0.5,
-          "transition": "Wait_For_Injury_Civilian",
+          "transition": "Military_Check",
           "remarks": [
             "The GMF's distributed transition will take this transition and automatically adjust the distribution ",
             "out of 1.0 if none of the other transitions are taken, see: ",
@@ -183,7 +166,7 @@
         },
         {
           "distribution": 0.5,
-          "transition": "Wait_For_Injury_Civilian",
+          "transition": "Military_Check",
           "remarks": [
             "The GMF's distributed transition will take this transition and automatically adjust the distribution ",
             "out of 1.0 if none of the other transitions are taken, see: ",
@@ -256,8 +239,8 @@
               "transition": "Shoulder_Injury"
             },
             {
-              "distribution": 0.5,
-              "transition": "Wait_For_Injury_Civilian",
+              "distribution": 0.894409,
+              "transition": "Military_Check",
               "remarks": [
                 "The GMF's distributed transition will take this transition and automatically adjust the distribution ",
                 "out of 1.0 if none of the other transitions are taken, see: ",
@@ -318,8 +301,8 @@
               "transition": "Shoulder_Injury"
             },
             {
-              "distribution": 0.5,
-              "transition": "Wait_For_Injury_Civilian",
+              "distribution": 0.919409,
+              "transition": "Military_Check",
               "remarks": [
                 "The GMF's distributed transition will take this transition and automatically adjust the distribution ",
                 "out of 1.0 if none of the other transitions are taken, see: ",
@@ -2646,7 +2629,7 @@
           "remarks": [
             "Fallback transition after all medications are ended"
           ],
-          "transition": "Wait_For_Injury_Civilian"
+          "transition": "Military_Check"
         }
       ]
     },
@@ -2784,7 +2767,19 @@
     "Call_Injury_Rates_Submodule": {
       "type": "CallSubmodule",
       "submodule": "readiness/injury_rates",
-      "direct_transition": "Wait_for_Appointment_Military"
+      "conditional_transition": [
+        {
+          "transition": "Wait_for_Appointment_Military",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Injury",
+            "operator": "is not nil"
+          }
+        },
+        {
+          "transition": "Military_Check"
+        }
+      ]
     },
     "Encounter_for_Injury_Military": {
       "type": "Encounter",
@@ -2818,8 +2813,30 @@
       "direct_transition": "End_Injury_Encounter_Military"
     },
     "Call_Injury_Times_Submodule": {
+      "type": "CallSubmodule",
+      "submodule": "readiness/injury_time",
+      "direct_transition": "Military_Check"
+    },
+    "Military_Check": {
       "type": "Simple",
-      "direct_transition": "Initial"
+      "conditional_transition": [
+        {
+          "transition": "Is_Military",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 450031000124104,
+                "display": "Military service member of air force (occupation)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Is_Civilian"
+        }
+      ]
     }
   }
 }
