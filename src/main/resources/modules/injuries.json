@@ -37,64 +37,22 @@
   "states": {
     "Initial": {
       "type": "Initial",
-      "direct_transition": "Wait_For_Injury"
-    },
-    "Wait_For_Injury": {
-      "type": "Delay",
-      "remarks": [
-        "======================================================================",
-        " INCIDENCE                                                            ",
-        "======================================================================",
-        "We give patients the opportunity to get injured about once per year. The range ",
-        "here is inteded to introduce some randomness to the data so patients aren't all ",
-        "getting injured on the same day each year.",
-        "Distributions of injuries are initially based on the 2015 U.S. resident population (308.75M) and the ",
-        "following incidence rates: ",
-        "Spinal:        0.000153   http://www.boneandjointburden.org/2014-report/iiia12/traumatic-spine-fractures",
-        "Gunshots:      0.000318   http://smartgunlaws.org/gun-deaths-and-injuries-statistics/",
-        "Concussions:   0.005100   https://www.cdc.gov/traumaticbraininjury/pdf/tbi_report_to_congress_epi_and_rehab-a.pdf",
-        "Whiplash:      0.004780   http://www.srisd.com/consumer_site/epidemiology.htm (This may be an overestimate)",
-        "Broken bones:  0.058300   http://www.boneandjointburden.org/docs/By%20The%20Numbers%20-%20MSK%20Injuries.pdf",
-        "Burns:         0.003980   http://www.burnfoundation.org/programs/resource.cfm?c=2&a=6",
-        "Lacerations:   0.026100   (see broken bones, above)",
-        "Sprains:       0.054400   https://www.ncbi.nlm.nih.gov/pubmed/20926721",
-        "Knees:         0.002290   https://www.ncbi.nlm.nih.gov/pubmed/22506941",
-        "Shoulders:     0.001470   http://rheumatology.oxfordjournals.org/content/45/2/215.full",
-        "From these estimates the incidences may be adjusted slightly (see notes when a rate is adjusted) ",
-        "to yield reasonable prevalences."
-      ],
-      "range": {
-        "low": 10,
-        "high": 14,
-        "unit": "months"
-      },
       "conditional_transition": [
         {
+          "transition": "Is_Military",
           "condition": {
-            "condition_type": "Age",
-            "operator": "<",
-            "quantity": 18,
-            "unit": "years"
-          },
-          "transition": "Child_Incidence_Rates"
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 450031000124104,
+                "display": "Military service member of air force (occupation)"
+              }
+            ]
+          }
         },
         {
-          "condition": {
-            "condition_type": "Age",
-            "operator": "<=",
-            "quantity": 65,
-            "unit": "years"
-          },
-          "transition": "Adult_Incidence_Rates"
-        },
-        {
-          "condition": {
-            "condition_type": "Age",
-            "operator": ">",
-            "quantity": 65,
-            "unit": "years"
-          },
-          "transition": "Elderly_Incidence_Rates"
+          "transition": "Is_Civilian"
         }
       ]
     },
@@ -158,7 +116,7 @@
         },
         {
           "distribution": 0.5,
-          "transition": "Wait_For_Injury",
+          "transition": "Wait_For_Injury_Civilian",
           "remarks": [
             "The GMF's distributed transition will take this transition and automatically adjust the distribution ",
             "out of 1.0 if none of the other transitions are taken, see: ",
@@ -225,7 +183,7 @@
         },
         {
           "distribution": 0.5,
-          "transition": "Wait_For_Injury",
+          "transition": "Wait_For_Injury_Civilian",
           "remarks": [
             "The GMF's distributed transition will take this transition and automatically adjust the distribution ",
             "out of 1.0 if none of the other transitions are taken, see: ",
@@ -299,7 +257,7 @@
             },
             {
               "distribution": 0.5,
-              "transition": "Wait_For_Injury",
+              "transition": "Wait_For_Injury_Civilian",
               "remarks": [
                 "The GMF's distributed transition will take this transition and automatically adjust the distribution ",
                 "out of 1.0 if none of the other transitions are taken, see: ",
@@ -361,7 +319,7 @@
             },
             {
               "distribution": 0.5,
-              "transition": "Wait_For_Injury",
+              "transition": "Wait_For_Injury_Civilian",
               "remarks": [
                 "The GMF's distributed transition will take this transition and automatically adjust the distribution ",
                 "out of 1.0 if none of the other transitions are taken, see: ",
@@ -2688,7 +2646,7 @@
           "remarks": [
             "Fallback transition after all medications are ended"
           ],
-          "transition": "Wait_For_Injury"
+          "transition": "Wait_For_Injury_Civilian"
         }
       ]
     },
@@ -2746,6 +2704,122 @@
     },
     "Terminal": {
       "type": "Terminal"
+    },
+    "Is_Civilian": {
+      "type": "Simple",
+      "direct_transition": "Wait_For_Injury_Civilian"
+    },
+    "Is_Military": {
+      "type": "Simple",
+      "direct_transition": "Wait_For_Injury_Military"
+    },
+    "Wait_For_Injury_Civilian": {
+      "type": "Delay",
+      "remarks": [
+        "======================================================================",
+        " INCIDENCE                                                            ",
+        "======================================================================",
+        "We give patients the opportunity to get injured about once per year. The range ",
+        "here is inteded to introduce some randomness to the data so patients aren't all ",
+        "getting injured on the same day each year.",
+        "Distributions of injuries are initially based on the 2015 U.S. resident population (308.75M) and the ",
+        "following incidence rates: ",
+        "Spinal:        0.000153   http://www.boneandjointburden.org/2014-report/iiia12/traumatic-spine-fractures",
+        "Gunshots:      0.000318   http://smartgunlaws.org/gun-deaths-and-injuries-statistics/",
+        "Concussions:   0.005100   https://www.cdc.gov/traumaticbraininjury/pdf/tbi_report_to_congress_epi_and_rehab-a.pdf",
+        "Whiplash:      0.004780   http://www.srisd.com/consumer_site/epidemiology.htm (This may be an overestimate)",
+        "Broken bones:  0.058300   http://www.boneandjointburden.org/docs/By%20The%20Numbers%20-%20MSK%20Injuries.pdf",
+        "Burns:         0.003980   http://www.burnfoundation.org/programs/resource.cfm?c=2&a=6",
+        "Lacerations:   0.026100   (see broken bones, above)",
+        "Sprains:       0.054400   https://www.ncbi.nlm.nih.gov/pubmed/20926721",
+        "Knees:         0.002290   https://www.ncbi.nlm.nih.gov/pubmed/22506941",
+        "Shoulders:     0.001470   http://rheumatology.oxfordjournals.org/content/45/2/215.full",
+        "From these estimates the incidences may be adjusted slightly (see notes when a rate is adjusted) ",
+        "to yield reasonable prevalences."
+      ],
+      "range": {
+        "low": 10,
+        "high": 14,
+        "unit": "months"
+      },
+      "conditional_transition": [
+        {
+          "condition": {
+            "condition_type": "Age",
+            "operator": "<",
+            "quantity": 18,
+            "unit": "years"
+          },
+          "transition": "Child_Incidence_Rates"
+        },
+        {
+          "condition": {
+            "condition_type": "Age",
+            "operator": "<=",
+            "quantity": 65,
+            "unit": "years"
+          },
+          "transition": "Adult_Incidence_Rates"
+        },
+        {
+          "condition": {
+            "condition_type": "Age",
+            "operator": ">",
+            "quantity": 65,
+            "unit": "years"
+          },
+          "transition": "Elderly_Incidence_Rates"
+        }
+      ]
+    },
+    "Wait_For_Injury_Military": {
+      "type": "Delay",
+      "direct_transition": "Call_Injury_Rates_Submodule",
+      "range": {
+        "low": 10,
+        "high": 14,
+        "unit": "months"
+      }
+    },
+    "Call_Injury_Rates_Submodule": {
+      "type": "CallSubmodule",
+      "submodule": "readiness/injury_rates",
+      "direct_transition": "Wait_for_Appointment_Military"
+    },
+    "Encounter_for_Injury_Military": {
+      "type": "Encounter",
+      "encounter_class": "ambulatory",
+      "reason": "Injury",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 737470001,
+          "display": "Primary care management (procedure)"
+        }
+      ],
+      "direct_transition": "Call_OTC_Pain_Relief_SubModule_Military"
+    },
+    "End_Injury_Encounter_Military": {
+      "type": "EncounterEnd",
+      "direct_transition": "Call_Injury_Times_Submodule"
+    },
+    "Wait_for_Appointment_Military": {
+      "type": "Delay",
+      "direct_transition": "Encounter_for_Injury_Military",
+      "range": {
+        "low": 0,
+        "high": 21,
+        "unit": "days"
+      }
+    },
+    "Call_OTC_Pain_Relief_SubModule_Military": {
+      "type": "CallSubmodule",
+      "submodule": "medications/otc_pain_reliever",
+      "direct_transition": "End_Injury_Encounter_Military"
+    },
+    "Call_Injury_Times_Submodule": {
+      "type": "Simple",
+      "direct_transition": "Initial"
     }
   }
 }

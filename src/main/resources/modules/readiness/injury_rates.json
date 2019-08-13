@@ -1,0 +1,620 @@
+{
+  "name": "injury_rates",
+  "remarks": [
+    "A blank module"
+  ],
+  "states": {
+    "Initial": {
+      "type": "Initial",
+      "direct_transition": "Job_Class_Check"
+    },
+    "Terminal": {
+      "type": "Terminal"
+    },
+    "FC_1": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Foot_and_Ankle",
+          "distribution": 0.0186
+        },
+        {
+          "transition": "Hand_and_Wrist",
+          "distribution": 0.0046
+        },
+        {
+          "transition": "Knee",
+          "distribution": 0.0124
+        },
+        {
+          "transition": "Leg",
+          "distribution": 0.004
+        },
+        {
+          "transition": "Shoulder",
+          "distribution": 0.0084
+        },
+        {
+          "transition": "Other_Injury",
+          "distribution": 0.014
+        },
+        {
+          "transition": "No_Injury",
+          "distribution": 0.938
+        }
+      ]
+    },
+    "FC_2": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "distribution": 0.0279,
+          "transition": "Foot_and_Ankle"
+        },
+        {
+          "distribution": 0.0058,
+          "transition": "Hand_and_Wrist"
+        },
+        {
+          "transition": "Knee",
+          "distribution": 0.0349
+        },
+        {
+          "transition": "Leg",
+          "distribution": 0.0106
+        },
+        {
+          "transition": "Shoulder",
+          "distribution": 0.0233
+        },
+        {
+          "transition": "Other_Injury",
+          "distribution": 0.0336
+        },
+        {
+          "transition": "No_Injury",
+          "distribution": 0.8639000000000001
+        }
+      ]
+    },
+    "FC_3": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "distribution": 0.0552,
+          "transition": "Foot_and_Ankle"
+        },
+        {
+          "distribution": 0.0101,
+          "transition": "Hand_and_Wrist"
+        },
+        {
+          "transition": "Knee",
+          "distribution": 0.0547
+        },
+        {
+          "transition": "Leg",
+          "distribution": 0.0151
+        },
+        {
+          "transition": "Shoulder",
+          "distribution": 0.0361
+        },
+        {
+          "transition": "Other_Injury",
+          "distribution": 0.05390000000000006
+        },
+        {
+          "transition": "No_Injury",
+          "distribution": 0.7748999999999999
+        }
+      ]
+    },
+    "FC_3_GBC": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "distribution": 0.0552,
+          "transition": "Foot_and_Ankle"
+        },
+        {
+          "distribution": 0.0101,
+          "transition": "Hand_and_Wrist"
+        },
+        {
+          "transition": "Knee",
+          "distribution": 0.0547
+        },
+        {
+          "transition": "Leg",
+          "distribution": 0.0151
+        },
+        {
+          "transition": "Shoulder",
+          "distribution": 0.0361
+        },
+        {
+          "transition": "Other_Injury",
+          "distribution": 0.05390000000000006
+        },
+        {
+          "transition": "No_Injury",
+          "distribution": 0.7748999999999999
+        }
+      ]
+    },
+    "FC_3_GBC_SWA": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "distribution": 0.0276,
+          "transition": "Foot_and_Ankle"
+        },
+        {
+          "distribution": 0.0065,
+          "transition": "Hand_and_Wrist"
+        },
+        {
+          "transition": "Knee",
+          "distribution": 0.0316
+        },
+        {
+          "transition": "Leg",
+          "distribution": 0.0128
+        },
+        {
+          "transition": "Shoulder",
+          "distribution": 0.0252
+        },
+        {
+          "transition": "Other_Injury",
+          "distribution": 0.0341
+        },
+        {
+          "transition": "No_Injury",
+          "distribution": 0.8622000000000001
+        }
+      ]
+    },
+    "FC_3_SWA": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "distribution": 0.0252,
+          "transition": "Foot_and_Ankle"
+        },
+        {
+          "distribution": 0.006,
+          "transition": "Hand_and_Wrist"
+        },
+        {
+          "transition": "Knee",
+          "distribution": 0.0215
+        },
+        {
+          "transition": "Leg",
+          "distribution": 0.0127
+        },
+        {
+          "transition": "Shoulder",
+          "distribution": 0.0233
+        },
+        {
+          "transition": "Other_Injury",
+          "distribution": 0.0256
+        }
+      ]
+    },
+    "GBC": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "distribution": 0.0682,
+          "transition": "Foot_and_Ankle"
+        },
+        {
+          "distribution": 0.0152,
+          "transition": "Hand_and_Wrist"
+        },
+        {
+          "transition": "Knee",
+          "distribution": 0.0758
+        },
+        {
+          "transition": "Leg",
+          "distribution": 0.0223
+        },
+        {
+          "transition": "Other_Injury",
+          "distribution": 0.0764
+        },
+        {
+          "transition": "Shoulder",
+          "distribution": 0.0402
+        },
+        {
+          "transition": "No_Injury",
+          "distribution": 0.7019
+        }
+      ]
+    },
+    "MOD": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "distribution": 0.0157,
+          "transition": "Foot_and_Ankle"
+        },
+        {
+          "distribution": 0.0022,
+          "transition": "Hand_and_Wrist"
+        },
+        {
+          "transition": "Knee",
+          "distribution": 0.0173
+        },
+        {
+          "transition": "Leg",
+          "distribution": 0.0049
+        },
+        {
+          "transition": "Shoulder",
+          "distribution": 0.0106
+        },
+        {
+          "transition": "Other_Injury",
+          "distribution": 0.0164
+        },
+        {
+          "transition": "No_Injury",
+          "distribution": 0.9329000000000001
+        }
+      ]
+    },
+    "RPA": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "distribution": 0.0129,
+          "transition": "Foot_and_Ankle"
+        },
+        {
+          "distribution": 0.0022,
+          "transition": "Hand_and_Wrist"
+        },
+        {
+          "transition": "Knee",
+          "distribution": 0.0173
+        },
+        {
+          "transition": "Leg",
+          "distribution": 0.0049
+        },
+        {
+          "transition": "Other_Injury",
+          "distribution": 0.0164
+        },
+        {
+          "transition": "Shoulder",
+          "distribution": 0.0106
+        },
+        {
+          "transition": "No_Injury",
+          "distribution": 0.9357
+        }
+      ]
+    },
+    "Job_Class_Check": {
+      "type": "Simple",
+      "conditional_transition": [
+        {
+          "transition": "FC_1",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "fc_1"
+          }
+        },
+        {
+          "transition": "FC_2",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "fc_2"
+          }
+        },
+        {
+          "transition": "FC_3",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "fc_3"
+          }
+        },
+        {
+          "transition": "FC_3_GBC",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "fc_3_gbc"
+          }
+        },
+        {
+          "transition": "FC_3_GBC_SWA",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "fc_3_gbc_swa"
+          }
+        },
+        {
+          "transition": "FC_3_SWA",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "fc_3_swa"
+          }
+        },
+        {
+          "transition": "GBC",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "gbc"
+          }
+        },
+        {
+          "transition": "MOD",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "mod"
+          }
+        },
+        {
+          "transition": "RPA",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "rpa"
+          }
+        },
+        {
+          "transition": "Regular (Non-SDS)"
+        }
+      ]
+    },
+    "Regular (Non-SDS)": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "distribution": 0.0633,
+          "transition": "Foot_and_Ankle"
+        },
+        {
+          "distribution": 0.0149,
+          "transition": "Hand_and_Wrist"
+        },
+        {
+          "transition": "Knee",
+          "distribution": 0.0726
+        },
+        {
+          "transition": "Leg",
+          "distribution": 0.0222
+        },
+        {
+          "transition": "Other_Injury",
+          "distribution": 0.0747
+        },
+        {
+          "transition": "Shoulder",
+          "distribution": 0.046
+        },
+        {
+          "transition": "No_Injury",
+          "distribution": 0.7063000000000001
+        }
+      ]
+    },
+    "No_Injury": {
+      "type": "Simple",
+      "direct_transition": "Terminal"
+    },
+    "Foot_and_Ankle": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "Injury",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 125604000,
+          "display": "Injury of foot (disorder)"
+        },
+        {
+          "system": "SNOMED-CT",
+          "code": 125603006,
+          "display": "Injury of ankle (disorder)"
+        }
+      ],
+      "conditional_transition": [
+        {
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 429011000124100,
+                "display": "Physically able to work (finding)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Start_Not_Medically_Ready_Foot_and_Ankle"
+        }
+      ]
+    },
+    "Hand_and_Wrist": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "Injury",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 125598003,
+          "display": "Injury of wrist (disorder)"
+        },
+        {
+          "system": "SNOMED-CT",
+          "code": 125599006,
+          "display": "Injury of hand (disorder)"
+        }
+      ],
+      "conditional_transition": [
+        {
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 429011000124100,
+                "display": "Physically able to work (finding)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Start_Not_Medically_Ready_Hand_and_Wrist"
+        }
+      ]
+    },
+    "Knee": {
+      "type": "ConditionOnset",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 125601008,
+          "display": "Injury of knee (disorder)"
+        }
+      ],
+      "direct_transition": "Start_Not_Medically_Ready_Knee",
+      "assign_to_attribute": "Injury"
+    },
+    "Leg": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "Injury",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 125602001,
+          "display": "Injury of lower leg (disorder)"
+        }
+      ],
+      "direct_transition": "Start_Not_Medically_Ready_Leg"
+    },
+    "Shoulder": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "Injury",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 125594001,
+          "display": "Injury of shoulder region (disorder)"
+        }
+      ],
+      "direct_transition": "Start_Not_Medically_Ready_Shoulder"
+    },
+    "Other_Injury": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "Injury",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 417163006,
+          "display": "Traumatic AND/OR non-traumatic injury (disorder)"
+        }
+      ],
+      "direct_transition": "Start_Not_Medically_Ready_Other_Injury"
+    },
+    "Start_Not_Medically_Ready_Foot_and_Ankle": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "225888002|:42752001|=(125604000,125603006)",
+          "display": "Unfit Due to Foot and Ankle Injury"
+        }
+      ],
+      "direct_transition": "Terminal"
+    },
+    "Start_Not_Medically_Ready_Hand_and_Wrist": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "225888002|:42752001|=(125599006,125598003)",
+          "display": "Unfit Due to Hand and Wrist Injury"
+        }
+      ],
+      "direct_transition": "Terminal"
+    },
+    "Start_Not_Medically_Ready_Knee": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "225888002|:42752001|=125601008",
+          "display": "Unfit Due to Knee Injury"
+        }
+      ],
+      "direct_transition": "Terminal"
+    },
+    "Start_Not_Medically_Ready_Leg": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "225888002|:42752001|=125602001",
+          "display": "Unfit Due to Leg Injury"
+        }
+      ],
+      "direct_transition": "Terminal"
+    },
+    "Start_Not_Medically_Ready_Shoulder": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "225888002|:42752001|=125594001",
+          "display": "Unfit Due to Shoulder Injury"
+        }
+      ],
+      "direct_transition": "Terminal"
+    },
+    "Start_Not_Medically_Ready_Other_Injury": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "225888002|:42752001|=417163006",
+          "display": "Unfit Due to Other Injury"
+        }
+      ],
+      "direct_transition": "Terminal"
+    }
+  }
+}

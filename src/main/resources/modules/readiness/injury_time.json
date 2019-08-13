@@ -1,0 +1,2211 @@
+{
+  "name": "injury_time",
+  "remarks": [
+    "A blank module"
+  ],
+  "states": {
+    "Initial": {
+      "type": "Initial",
+      "direct_transition": "Job_Class_Check"
+    },
+    "Terminal": {
+      "type": "Terminal"
+    },
+    "FC_1": {
+      "type": "Simple",
+      "conditional_transition": [
+        {
+          "transition": "Wait_FC_1_Foot_and_Ankle",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125604000,
+                "display": "Injury of foot (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125603006,
+                "display": "Injury of ankle (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_1_Hand_and_Wrist",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125599006,
+                "display": "Injury of hand (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125598003,
+                "display": "Injury of wrist (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_1_Knee",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125601008,
+                "display": "Injury of knee (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_1_Leg",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125602001,
+                "display": "Injury of lower leg (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_1_Shoulder",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125594001,
+                "display": "Injury of shoulder region (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_1_Other_Injury",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 417163006,
+                "display": "Traumatic AND/OR non-traumatic injury (disorder)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "FC_2": {
+      "type": "Simple",
+      "conditional_transition": [
+        {
+          "transition": "Wait_FC_2_Foot_and_Ankle",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125604000,
+                "display": "Injury of foot (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125603006,
+                "display": "Injury of ankle (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_2_Hand_and_Wrist",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125599006,
+                "display": "Injury of hand (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125598003,
+                "display": "Injury of wrist (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_2_Knee",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125601008,
+                "display": "Injury of knee (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_2_Leg",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125602001,
+                "display": "Injury of lower leg (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_2_Shoulder",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125594001,
+                "display": "Injury of shoulder region (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_2_Other_Injury",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 417163006,
+                "display": "Traumatic AND/OR non-traumatic injury (disorder)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "FC_3": {
+      "type": "Simple",
+      "conditional_transition": [
+        {
+          "transition": "Wait_FC_3_Foot_and_Ankle",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125604000,
+                "display": "Injury of foot (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125603006,
+                "display": "Injury of ankle (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_Hand_and_Wrist",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125599006,
+                "display": "Injury of hand (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125598003,
+                "display": "Injury of wrist (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_Knee",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125601008,
+                "display": "Injury of knee (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_Leg",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125602001,
+                "display": "Injury of lower leg (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_Shoulder",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125594001,
+                "display": "Injury of shoulder region (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_Other_Injury",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 417163006,
+                "display": "Traumatic AND/OR non-traumatic injury (disorder)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "FC_3_GBC": {
+      "type": "Simple",
+      "conditional_transition": [
+        {
+          "transition": "Wait_FC_3_GBC_Foot_and_Ankle",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125604000,
+                "display": "Injury of foot (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125603006,
+                "display": "Injury of ankle (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_GBC_Hand_and_Wrist",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125599006,
+                "display": "Injury of hand (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125598003,
+                "display": "Injury of wrist (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_GBC_Knee",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125601008,
+                "display": "Injury of knee (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_GBC_Leg",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125602001,
+                "display": "Injury of lower leg (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_GBC_Shoulder",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125594001,
+                "display": "Injury of shoulder region (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_GBC_Other_Injury",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 417163006,
+                "display": "Traumatic AND/OR non-traumatic injury (disorder)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "FC_3_GBC_SWA": {
+      "type": "Simple",
+      "conditional_transition": [
+        {
+          "transition": "Wait_FC_3_GBC_SWA_Foot_and_Ankle",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125604000,
+                "display": "Injury of foot (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125603006,
+                "display": "Injury of ankle (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_GBC_SWA_Hand_and_Wrist",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125599006,
+                "display": "Injury of hand (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125598003,
+                "display": "Injury of wrist (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_GBC_SWA_Knee",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125601008,
+                "display": "Injury of knee (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_GBC_SWA_Leg",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125602001,
+                "display": "Injury of lower leg (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_GBC_SWA_Shoulder",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125594001,
+                "display": "Injury of shoulder region (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_GBC_SWA_Other_Injury",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 417163006,
+                "display": "Traumatic AND/OR non-traumatic injury (disorder)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "FC_3_SWA": {
+      "type": "Simple",
+      "conditional_transition": [
+        {
+          "transition": "Wait_FC_3_SWA_Foot_and_Ankle",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125604000,
+                "display": "Injury of foot (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125603006,
+                "display": "Injury of ankle (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_SWA_Hand_and_Wrist",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125599006,
+                "display": "Injury of hand (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125598003,
+                "display": "Injury of wrist (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_SWA_Knee",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125601008,
+                "display": "Injury of knee (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_SWA_Leg",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125602001,
+                "display": "Injury of lower leg (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_SWA_Shoulder",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125594001,
+                "display": "Injury of shoulder region (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_FC_3_SWA_Other_injury",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 417163006,
+                "display": "Traumatic AND/OR non-traumatic injury (disorder)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "GBC": {
+      "type": "Simple",
+      "conditional_transition": [
+        {
+          "transition": "Wait_GBC_Foot_and_Ankle",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125604000,
+                "display": "Injury of foot (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125603006,
+                "display": "Injury of ankle (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_GBC_Hand_and_Wrist",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125599006,
+                "display": "Injury of hand (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125598003,
+                "display": "Injury of wrist (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_GBC_Knee",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125601008,
+                "display": "Injury of knee (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_GBC_Leg",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125602001,
+                "display": "Injury of lower leg (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_GBC_Shoulder",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125594001,
+                "display": "Injury of shoulder region (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_GBC_Other_Injury",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 417163006,
+                "display": "Traumatic AND/OR non-traumatic injury (disorder)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "MOD": {
+      "type": "Simple",
+      "conditional_transition": [
+        {
+          "transition": "Wait_MOD_Foot_and_Ankle",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125604000,
+                "display": "Injury of foot (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125603006,
+                "display": "Injury of ankle (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_MOD_Hand_and_Wrist",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125599006,
+                "display": "Injury of hand (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125598003,
+                "display": "Injury of wrist (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_MOD_Knee",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125601008,
+                "display": "Injury of knee (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_MOD_Leg",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125602001,
+                "display": "Injury of lower leg (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_MOD_Shoulder",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125594001,
+                "display": "Injury of shoulder region (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_MOD_Other_Injury",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 417163006,
+                "display": "Traumatic AND/OR non-traumatic injury (disorder)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "RPA": {
+      "type": "Simple",
+      "conditional_transition": [
+        {
+          "transition": "Wait_RPA_Foot_and_Ankle",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125604000,
+                "display": "Injury of foot (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125603006,
+                "display": "Injury of ankle (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_RPA_Hand_and_Wrist",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125599006,
+                "display": "Injury of hand (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125598003,
+                "display": "Injury of wrist (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_RPA_Knee",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125601008,
+                "display": "Injury of knee (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_RPA_Leg",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125602001,
+                "display": "Injury of lower leg (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_RPA_Shoulder",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125594001,
+                "display": "Injury of shoulder region (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_RPA_Other_Injury",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 417163006,
+                "display": "Traumatic AND/OR non-traumatic injury (disorder)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Job_Class_Check": {
+      "type": "Simple",
+      "conditional_transition": [
+        {
+          "transition": "FC_1",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "fc_1"
+          }
+        },
+        {
+          "transition": "FC_2",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "fc_2"
+          }
+        },
+        {
+          "transition": "FC_3",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "fc_3"
+          }
+        },
+        {
+          "transition": "FC_3_GBC",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "fc_3_gbc"
+          }
+        },
+        {
+          "transition": "FC_3_GBC_SWA",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "fc_3_gbc_swa"
+          }
+        },
+        {
+          "transition": "FC_3_SWA",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "fc_3_swa"
+          }
+        },
+        {
+          "transition": "GBC",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "gbc"
+          }
+        },
+        {
+          "transition": "MOD",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "mod"
+          }
+        },
+        {
+          "transition": "RPA",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "rpa"
+          }
+        },
+        {
+          "transition": "Regular (Non-SDS)"
+        }
+      ]
+    },
+    "Regular (Non-SDS)": {
+      "type": "Simple",
+      "conditional_transition": [
+        {
+          "transition": "Wait_Regular_Foot_and_Ankle",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125604000,
+                "display": "Injury of foot (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125603006,
+                "display": "Injury of ankle (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_Regular_Hand_and_Wrist",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125599006,
+                "display": "Injury of hand (disorder)"
+              },
+              {
+                "system": "SNOMED-CT",
+                "code": 125598003,
+                "display": "Injury of wrist (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_Regular_Knee",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125601008,
+                "display": "Injury of knee (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_Regular_Leg",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125602001,
+                "display": "Injury of lower leg (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_Regular_Shoulder",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 125594001,
+                "display": "Injury of shoulder region (disorder)"
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Wait_Regular_Other_Injury",
+          "condition": {
+            "condition_type": "Active Condition",
+            "codes": [
+              {
+                "system": "SNOMED-CT",
+                "code": 417163006,
+                "display": "Traumatic AND/OR non-traumatic injury (disorder)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Wait_FC_1_Foot_and_Ankle": {
+      "type": "Delay",
+      "range": {
+        "low": 16,
+        "high": 45,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Foot_and_Ankle",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_1_Foot_and_Ankle",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_1_Knee": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 90,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Knee",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_1_Knee",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_1_Leg": {
+      "type": "Delay",
+      "range": {
+        "low": 21,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Leg",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_1_Leg",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_1_Shoulder": {
+      "type": "Delay",
+      "range": {
+        "low": 28,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Shoulder",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_1_Shoulder",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_1_Other_Injury": {
+      "type": "Delay",
+      "range": {
+        "low": 19,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Other_Injury",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_1_Other_Injury",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_2_Foot_and_Ankle": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 61,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Foot_and_Ankle",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_2_Foot_and_Ankle",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_2_Hand_and_Wrist": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 61,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Hand_and_Wrist",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_2_Hand_and_Wrist",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_2_Knee": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 90,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Knee",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_2_Knee",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_2_Leg": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 90,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Leg",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_2_Leg",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_2_Shoulder": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 90,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Shoulder",
+          "distribution": 1
+        },
+        {
+          "transition": "Wait_FC_2_Shoulder",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_2_Other_Injury": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 87,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Other_Injury",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_2_Other_Injury",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_Foot_and_Ankle": {
+      "type": "Delay",
+      "range": {
+        "low": 27,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Foot_and_Ankle",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_Foot_and_Ankle",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_Hand_and_Wrist": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Hand_and_Wrist",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_Hand_and_Wrist",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_Knee": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 90,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Knee",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_Knee",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_Leg": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 62,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Leg",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_Leg",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_Shoulder": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 87,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Shoulder",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_Shoulder",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_Other_Injury": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 63,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Other_Injury",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_Other_Injury",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_GBC_Foot_and_Ankle": {
+      "type": "Delay",
+      "range": {
+        "low": 21,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Foot_and_Ankle",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_GBC_Foot_and_Ankle",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_GBC_Hand_and_Wrist": {
+      "type": "Delay",
+      "range": {
+        "low": 29,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Hand_and_Wrist",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_GBC_Hand_and_Wrist",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_GBC_Knee": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 90,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Knee",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_GBC_Knee",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_GBC_Leg": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 61,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Leg",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_GBC_Leg",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_GBC_Shoulder": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 90,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Shoulder",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_GBC_Shoulder",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_GBC_Other_Injury": {
+      "type": "Delay",
+      "range": {
+        "low": 28,
+        "high": 64,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Other_Injury",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_GBC_Other_Injury",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_GBC_SWA_Foot_and_Ankle": {
+      "type": "Delay",
+      "range": {
+        "low": 16,
+        "high": 57,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Foot_and_Ankle",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_GBC_SWA_Foot_and_Ankle",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_GBC_SWA_Hand_and_Wrist": {
+      "type": "Delay",
+      "range": {
+        "low": 29,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Hand_and_Wrist",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_GBC_SWA_Hand_and_Wrist",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_GBC_SWA_Knee": {
+      "type": "Delay",
+      "range": {
+        "low": 19,
+        "high": 61,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Knee",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_GBC_SWA_Knee",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_GBC_SWA_Leg": {
+      "type": "Delay",
+      "range": {
+        "low": 14,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Leg",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_GBC_SWA_Leg",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_GBC_SWA_Shoulder": {
+      "type": "Delay",
+      "range": {
+        "low": 29,
+        "high": 75,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Shoulder",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_GBC_SWA_Shoulder",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_GBC_SWA_Other_Injury": {
+      "type": "Delay",
+      "range": {
+        "low": 14,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Other_Injury",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_GBC_SWA_Other_Injury",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_SWA_Foot_and_Ankle": {
+      "type": "Delay",
+      "range": {
+        "low": 18,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Foot_and_Ankle",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_SWA_Foot_and_Ankle",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_SWA_Hand_and_Wrist": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 59,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Hand_and_Wrist",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_SWA_Hand_and_Wrist",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_SWA_Knee": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 90,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Knee",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_SWA_Knee",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_SWA_Leg": {
+      "type": "Delay",
+      "range": {
+        "low": 27,
+        "high": 120,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Leg",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_SWA_Leg",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_SWA_Shoulder": {
+      "type": "Delay",
+      "range": {
+        "low": 23,
+        "high": 72,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Shoulder",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_SWA_Shoulder",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_FC_3_SWA_Other_injury": {
+      "type": "Delay",
+      "range": {
+        "low": 21,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Other_Injury",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_3_SWA_Other_injury",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_GBC_Foot_and_Ankle": {
+      "type": "Delay",
+      "range": {
+        "low": 21,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Foot_and_Ankle",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_GBC_Foot_and_Ankle",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_GBC_Hand_and_Wrist": {
+      "type": "Delay",
+      "range": {
+        "low": 28,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Hand_and_Wrist",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_GBC_Hand_and_Wrist",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_GBC_Knee": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 64,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Knee",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_GBC_Knee",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_GBC_Leg": {
+      "type": "Delay",
+      "range": {
+        "low": 27,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Leg",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_GBC_Leg",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_GBC_Shoulder": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 66,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Shoulder",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_GBC_Shoulder",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_GBC_Other_Injury": {
+      "type": "Delay",
+      "range": {
+        "low": 24,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Other_Injury",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_GBC_Other_Injury",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_MOD_Foot_and_Ankle": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Hand_and_Wrist",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_MOD_Foot_and_Ankle",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_MOD_Hand_and_Wrist": {
+      "type": "Delay",
+      "range": {
+        "low": 21,
+        "high": 56,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Hand_and_Wrist",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_MOD_Hand_and_Wrist",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_MOD_Knee": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 62,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Knee",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_MOD_Knee",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_MOD_Leg": {
+      "type": "Delay",
+      "range": {
+        "low": 28,
+        "high": 45,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Leg",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_MOD_Leg",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_MOD_Shoulder": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 75,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Shoulder",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_MOD_Shoulder",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_MOD_Other_Injury": {
+      "type": "Delay",
+      "range": {
+        "low": 26,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Other_Injury",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_MOD_Other_Injury",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_RPA_Foot_and_Ankle": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Foot_and_Ankle",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_RPA_Foot_and_Ankle",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_RPA_Hand_and_Wrist": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 69,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Hand_and_Wrist",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_RPA_Hand_and_Wrist",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_RPA_Knee": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 90,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Knee",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_RPA_Knee",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_RPA_Leg": {
+      "type": "Delay",
+      "range": {
+        "low": 27,
+        "high": 66,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Leg",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_RPA_Leg",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_RPA_Shoulder": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 90,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Shoulder",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_RPA_Shoulder",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_RPA_Other_Injury": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Other_Injury",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_RPA_Other_Injury",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_Regular_Foot_and_Ankle": {
+      "type": "Delay",
+      "range": {
+        "low": 21,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Foot_and_Ankle",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_Regular_Foot_and_Ankle",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_Regular_Hand_and_Wrist": {
+      "type": "Delay",
+      "range": {
+        "low": 21,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Hand_and_Wrist",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_Regular_Hand_and_Wrist",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_Regular_Knee": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 75,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Knee",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_Regular_Knee",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_Regular_Leg": {
+      "type": "Delay",
+      "range": {
+        "low": 28,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Leg",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_Regular_Leg",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_Regular_Shoulder": {
+      "type": "Delay",
+      "range": {
+        "low": 30,
+        "high": 63,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Shoulder",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_Regular_Shoulder",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "Wait_Regular_Other_Injury": {
+      "type": "Delay",
+      "range": {
+        "low": 25,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Other_Injury",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_Regular_Other_Injury",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "End_Foot_and_Ankle": {
+      "type": "ConditionEnd",
+      "direct_transition": "End_Foot_and_Ankle_NMR",
+      "referenced_by_attribute": "Injury"
+    },
+    "End_Foot_and_Ankle_NMR": {
+      "type": "ConditionEnd",
+      "direct_transition": "Terminal",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "225888002|:42752001|=(125604000,125603006)",
+          "display": "Unfit Due to Foot and Ankle Injury"
+        }
+      ]
+    },
+    "Wait_FC_1_Hand_and_Wrist": {
+      "type": "Delay",
+      "range": {
+        "low": 21,
+        "high": 60,
+        "unit": "days"
+      },
+      "distributed_transition": [
+        {
+          "transition": "End_Hand_and_Wrist",
+          "distribution": 0.9
+        },
+        {
+          "transition": "Wait_FC_1_Hand_and_Wrist",
+          "distribution": 0.1
+        }
+      ]
+    },
+    "End_Knee": {
+      "type": "ConditionEnd",
+      "referenced_by_attribute": "Injury",
+      "direct_transition": "End_Knee_NMR"
+    },
+    "End_Knee_NMR": {
+      "type": "ConditionEnd",
+      "direct_transition": "Terminal",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "225888002|:42752001|=125601008",
+          "display": "Unfit Due to Knee Injury"
+        }
+      ]
+    },
+    "End_Leg": {
+      "type": "ConditionEnd",
+      "referenced_by_attribute": "Injury",
+      "direct_transition": "End_Leg_NMR"
+    },
+    "End_Leg_NMR": {
+      "type": "ConditionEnd",
+      "direct_transition": "Terminal",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "225888002|:42752001|=125602001",
+          "display": "Unfit Due to Leg Injury"
+        }
+      ]
+    },
+    "End_Hand_and_Wrist": {
+      "type": "ConditionEnd",
+      "referenced_by_attribute": "Injury",
+      "direct_transition": "End_Hand_and_Wrist_NMR"
+    },
+    "End_Hand_and_Wrist_NMR": {
+      "type": "ConditionEnd",
+      "direct_transition": "Terminal",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "225888002|:42752001|=(125599006,125598003)",
+          "display": "Unfit Due to Hand and Wrist Injury"
+        }
+      ]
+    },
+    "End_Shoulder": {
+      "type": "ConditionEnd",
+      "referenced_by_attribute": "Injury",
+      "direct_transition": "End_Shoulder_NMR"
+    },
+    "End_Shoulder_NMR": {
+      "type": "ConditionEnd",
+      "direct_transition": "Terminal",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "225888002|:42752001|=125594001",
+          "display": "Unfit Due to Shoulder Injury"
+        }
+      ]
+    },
+    "End_Other_Injury_NMR": {
+      "type": "ConditionEnd",
+      "referenced_by_attribute": "Injury",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "225888002|:42752001|=417163006",
+          "display": "Unfit Due to Other Injury"
+        }
+      ],
+      "direct_transition": "Terminal"
+    },
+    "End_Other_Injury": {
+      "type": "ConditionEnd",
+      "referenced_by_attribute": "Injury",
+      "direct_transition": "End_Other_Injury_NMR"
+    }
+  }
+}

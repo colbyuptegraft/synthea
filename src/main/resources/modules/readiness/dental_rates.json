@@ -21,7 +21,7 @@
           "display": "Dental caries (disorder)"
         }
       ],
-      "direct_transition": "End_Medically_Ready"
+      "direct_transition": "Start_Not_Medically_Ready_Caries"
     },
     "FC_1": {
       "type": "Simple",
@@ -53,7 +53,7 @@
           "display": "Tooth disorder (disorder)"
         }
       ],
-      "direct_transition": "End_Medically_Ready"
+      "direct_transition": "Start_Not_Medically_Ready_Other_Dental"
     },
     "FC_2": {
       "type": "Simple",
@@ -298,44 +298,6 @@
         {
           "transition": "No_Dental_Diagnosis",
           "distribution": 0.9590000000000001
-        }
-      ]
-    },
-    "End_Medically_Ready": {
-      "type": "ConditionEnd",
-      "codes": [
-        {
-          "system": "SNOMED-CT",
-          "code": 429011000124100,
-          "display": "Physically able to work (finding)"
-        }
-      ],
-      "conditional_transition": [
-        {
-          "transition": "Start_Not_Medically_Ready_Caries",
-          "condition": {
-            "condition_type": "Active Condition",
-            "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 80967001,
-                "display": "Dental caries (disorder)"
-              }
-            ]
-          }
-        },
-        {
-          "transition": "Start_Not_Medically_Ready_Other_Dental",
-          "condition": {
-            "condition_type": "Active Condition",
-            "codes": [
-              {
-                "system": "SNOMED-CT",
-                "code": 234947003,
-                "display": "Tooth disorder (disorder)"
-              }
-            ]
-          }
         }
       ]
     },

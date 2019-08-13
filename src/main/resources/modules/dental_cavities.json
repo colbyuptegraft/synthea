@@ -160,19 +160,6 @@
       "type": "EncounterEnd",
       "direct_transition": "Wait_Until_Dental_Visit"
     },
-    "Start_Medically_Ready": {
-      "type": "ConditionOnset",
-      "assign_to_attribute": "Medical_Readiness",
-      "target_encounter": "Followup_Dental_Visit",
-      "codes": [
-        {
-          "system": "SNOMED-CT",
-          "code": 429011000124100,
-          "display": "Physically able to work (finding)"
-        }
-      ],
-      "direct_transition": "End_Followup_Dental_Visit"
-    },
     "Is_Military": {
       "type": "Simple",
       "direct_transition": "Call_Dental_Rates_Submodule"
@@ -299,25 +286,25 @@
     },
     "End_Not_Medically_Ready_Caries": {
       "type": "ConditionEnd",
-      "direct_transition": "Start_Medically_Ready",
       "codes": [
         {
           "system": "SNOMED-CT",
           "code": "225888002|:42752001|=80967001",
           "display": "Unfit Due to Dental Caries"
         }
-      ]
+      ],
+      "direct_transition": "End_Followup_Dental_Visit"
     },
     "End_Other_Dental_Condition": {
       "type": "ConditionEnd",
-      "direct_transition": "Start_Medically_Ready",
       "codes": [
         {
           "system": "SNOMED-CT",
           "code": "225888002|:42752001|=234947003",
           "display": "Unfit Due to Other Dental Disorder"
         }
-      ]
+      ],
+      "direct_transition": "End_Followup_Dental_Visit"
     },
     "End_Initial_Dental_Visit_With_Cavity": {
       "type": "EncounterEnd",
