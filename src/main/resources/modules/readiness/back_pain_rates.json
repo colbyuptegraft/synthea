@@ -1,0 +1,316 @@
+{
+  "name": "back_pain_rates",
+  "remarks": [
+    "Causes of back pain adjusted to fit military population.  All considered mechanical in nature (https://www.ncbi.nlm.nih.gov/pubmed/17477101)",
+    "",
+    "Lumbar strain or sprain - 92.11%",
+    "Herniated disk - 5.26%",
+    "Spondylolisthesis - 2.63%"
+  ],
+  "states": {
+    "Initial": {
+      "type": "Initial",
+      "direct_transition": "Job_Class_Check"
+    },
+    "Terminal": {
+      "type": "Terminal"
+    },
+    "FC_1": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Back_Pain",
+          "distribution": 0.0096
+        },
+        {
+          "transition": "No_Back_Pain",
+          "distribution": 0.9904
+        }
+      ]
+    },
+    "FC_2": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Back_Pain",
+          "distribution": 0.0384
+        },
+        {
+          "transition": "No_Back_Pain",
+          "distribution": 0.9616
+        }
+      ]
+    },
+    "FC_3": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Back_Pain",
+          "distribution": 0.0912
+        },
+        {
+          "transition": "No_Back_Pain",
+          "distribution": 0.9088
+        }
+      ]
+    },
+    "FC_3_GBC": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Back_Pain",
+          "distribution": 0.066
+        },
+        {
+          "transition": "No_Back_Pain",
+          "distribution": 0.9339999999999999
+        }
+      ]
+    },
+    "FC_3_GBC_SWA": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Back_Pain",
+          "distribution": 0.0351
+        },
+        {
+          "transition": "No_Back_Pain",
+          "distribution": 0.9649000000000001
+        }
+      ]
+    },
+    "FC_3_SWA": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Back_Pain",
+          "distribution": 0.0204
+        },
+        {
+          "transition": "No_Back_Pain",
+          "distribution": 0.9796
+        }
+      ]
+    },
+    "GBC": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Back_Pain",
+          "distribution": 0.0768
+        },
+        {
+          "transition": "No_Back_Pain",
+          "distribution": 0.9232
+        }
+      ]
+    },
+    "MOD": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Back_Pain",
+          "distribution": 0.0174
+        },
+        {
+          "transition": "No_Back_Pain",
+          "distribution": 0.9826
+        }
+      ]
+    },
+    "RPA": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Back_Pain",
+          "distribution": 0.0173
+        },
+        {
+          "transition": "No_Back_Pain",
+          "distribution": 0.9826999999999999
+        }
+      ]
+    },
+    "Job_Class_Check": {
+      "type": "Simple",
+      "conditional_transition": [
+        {
+          "transition": "FC_1",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "fc_1"
+          }
+        },
+        {
+          "transition": "FC_2",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "fc_2"
+          }
+        },
+        {
+          "transition": "FC_3",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "fc_3"
+          }
+        },
+        {
+          "transition": "FC_3_GBC",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "fc_3_gbc"
+          }
+        },
+        {
+          "transition": "FC_3_GBC_SWA",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "fc_3_gbc_swa"
+          }
+        },
+        {
+          "transition": "FC_3_SWA",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "fc_3_swa"
+          }
+        },
+        {
+          "transition": "GBC",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "gbc"
+          }
+        },
+        {
+          "transition": "MOD",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "mod"
+          }
+        },
+        {
+          "transition": "RPA",
+          "condition": {
+            "condition_type": "Attribute",
+            "attribute": "Air_Force_Job_Class",
+            "operator": "==",
+            "value": "rpa"
+          }
+        },
+        {
+          "transition": "Regular (Non-SDS)"
+        }
+      ]
+    },
+    "Regular (Non-SDS)": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Back_Pain",
+          "distribution": 0.0878
+        },
+        {
+          "transition": "No_Back_Pain",
+          "distribution": 0.9122
+        }
+      ]
+    },
+    "No_Back_Pain": {
+      "type": "Simple",
+      "direct_transition": "Zero_Back_Pain_Attribute"
+    },
+    "Back_Pain": {
+      "type": "Simple",
+      "direct_transition": "Common_Causes"
+    },
+    "Common_Causes": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Start_Lumbar_Strain_or_Sprain",
+          "distribution": 0.9211
+        },
+        {
+          "transition": "Start_Herniated_Disc",
+          "distribution": 0.0526
+        },
+        {
+          "transition": "Start_Spondylolisthesis",
+          "distribution": 0.0263
+        }
+      ]
+    },
+    "Start_Lumbar_Strain_or_Sprain": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "Back_Pain",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 300956001,
+          "display": "Low back strain (disorder)"
+        }
+      ],
+      "direct_transition": "Start_Unfit_Due_to_Back_Pain"
+    },
+    "Start_Herniated_Disc": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "Back_Pain",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 448591000124106,
+          "display": "Herniation of nucleus pulposus of lumbar intervertebral disc (disorder)"
+        }
+      ],
+      "direct_transition": "Start_Unfit_Due_to_Back_Pain"
+    },
+    "Start_Spondylolisthesis": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "Back_Pain",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 274152003,
+          "display": "Spondylolisthesis (disorder)"
+        }
+      ],
+      "direct_transition": "Start_Unfit_Due_to_Back_Pain"
+    },
+    "Zero_Back_Pain_Attribute": {
+      "type": "SetAttribute",
+      "attribute": "Back_Pain",
+      "direct_transition": "Terminal"
+    },
+    "Start_Unfit_Due_to_Back_Pain": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "Unfit_Back_Pain",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "225888002|:42752001|=161891005",
+          "display": "Unfit Due to Back Pain"
+        }
+      ],
+      "direct_transition": "Terminal"
+    }
+  }
+}

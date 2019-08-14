@@ -37,7 +37,7 @@
   "states": {
     "Initial": {
       "type": "Initial",
-      "direct_transition": "Military_Check"
+      "direct_transition": "Wait_For_Injury"
     },
     "Child_Incidence_Rates": {
       "type": "Simple",
@@ -99,7 +99,7 @@
         },
         {
           "distribution": 0.5,
-          "transition": "Military_Check",
+          "transition": "Wait_For_Injury",
           "remarks": [
             "The GMF's distributed transition will take this transition and automatically adjust the distribution ",
             "out of 1.0 if none of the other transitions are taken, see: ",
@@ -165,8 +165,8 @@
           "transition": "Shoulder_Injury"
         },
         {
-          "distribution": 0.5,
-          "transition": "Military_Check",
+          "distribution": 0.944859,
+          "transition": "Wait_For_Injury",
           "remarks": [
             "The GMF's distributed transition will take this transition and automatically adjust the distribution ",
             "out of 1.0 if none of the other transitions are taken, see: ",
@@ -240,7 +240,7 @@
             },
             {
               "distribution": 0.894409,
-              "transition": "Military_Check",
+              "transition": "Wait_For_Injury",
               "remarks": [
                 "The GMF's distributed transition will take this transition and automatically adjust the distribution ",
                 "out of 1.0 if none of the other transitions are taken, see: ",
@@ -302,7 +302,7 @@
             },
             {
               "distribution": 0.919409,
-              "transition": "Military_Check",
+              "transition": "Wait_For_Injury",
               "remarks": [
                 "The GMF's distributed transition will take this transition and automatically adjust the distribution ",
                 "out of 1.0 if none of the other transitions are taken, see: ",
@@ -2629,7 +2629,7 @@
           "remarks": [
             "Fallback transition after all medications are ended"
           ],
-          "transition": "Military_Check"
+          "transition": "Wait_For_Injury"
         }
       ]
     },
@@ -2690,41 +2690,6 @@
     },
     "Is_Civilian": {
       "type": "Simple",
-      "direct_transition": "Wait_For_Injury_Civilian"
-    },
-    "Is_Military": {
-      "type": "Simple",
-      "direct_transition": "Wait_For_Injury_Military"
-    },
-    "Wait_For_Injury_Civilian": {
-      "type": "Delay",
-      "remarks": [
-        "======================================================================",
-        " INCIDENCE                                                            ",
-        "======================================================================",
-        "We give patients the opportunity to get injured about once per year. The range ",
-        "here is inteded to introduce some randomness to the data so patients aren't all ",
-        "getting injured on the same day each year.",
-        "Distributions of injuries are initially based on the 2015 U.S. resident population (308.75M) and the ",
-        "following incidence rates: ",
-        "Spinal:        0.000153   http://www.boneandjointburden.org/2014-report/iiia12/traumatic-spine-fractures",
-        "Gunshots:      0.000318   http://smartgunlaws.org/gun-deaths-and-injuries-statistics/",
-        "Concussions:   0.005100   https://www.cdc.gov/traumaticbraininjury/pdf/tbi_report_to_congress_epi_and_rehab-a.pdf",
-        "Whiplash:      0.004780   http://www.srisd.com/consumer_site/epidemiology.htm (This may be an overestimate)",
-        "Broken bones:  0.058300   http://www.boneandjointburden.org/docs/By%20The%20Numbers%20-%20MSK%20Injuries.pdf",
-        "Burns:         0.003980   http://www.burnfoundation.org/programs/resource.cfm?c=2&a=6",
-        "Lacerations:   0.026100   (see broken bones, above)",
-        "Sprains:       0.054400   https://www.ncbi.nlm.nih.gov/pubmed/20926721",
-        "Knees:         0.002290   https://www.ncbi.nlm.nih.gov/pubmed/22506941",
-        "Shoulders:     0.001470   http://rheumatology.oxfordjournals.org/content/45/2/215.full",
-        "From these estimates the incidences may be adjusted slightly (see notes when a rate is adjusted) ",
-        "to yield reasonable prevalences."
-      ],
-      "range": {
-        "low": 10,
-        "high": 14,
-        "unit": "months"
-      },
       "conditional_transition": [
         {
           "condition": {
@@ -2753,23 +2718,40 @@
           },
           "transition": "Elderly_Incidence_Rates"
         }
+      ],
+      "remarks": [
+        "======================================================================",
+        " INCIDENCE                                                            ",
+        "======================================================================",
+        "We give patients the opportunity to get injured about once per year. The range ",
+        "here is inteded to introduce some randomness to the data so patients aren't all ",
+        "getting injured on the same day each year.",
+        "Distributions of injuries are initially based on the 2015 U.S. resident population (308.75M) and the ",
+        "following incidence rates: ",
+        "Spinal:        0.000153   http://www.boneandjointburden.org/2014-report/iiia12/traumatic-spine-fractures",
+        "Gunshots:      0.000318   http://smartgunlaws.org/gun-deaths-and-injuries-statistics/",
+        "Concussions:   0.005100   https://www.cdc.gov/traumaticbraininjury/pdf/tbi_report_to_congress_epi_and_rehab-a.pdf",
+        "Whiplash:      0.004780   http://www.srisd.com/consumer_site/epidemiology.htm (This may be an overestimate)",
+        "Broken bones:  0.058300   http://www.boneandjointburden.org/docs/By%20The%20Numbers%20-%20MSK%20Injuries.pdf",
+        "Burns:         0.003980   http://www.burnfoundation.org/programs/resource.cfm?c=2&a=6",
+        "Lacerations:   0.026100   (see broken bones, above)",
+        "Sprains:       0.054400   https://www.ncbi.nlm.nih.gov/pubmed/20926721",
+        "Knees:         0.002290   https://www.ncbi.nlm.nih.gov/pubmed/22506941",
+        "Shoulders:     0.001470   http://rheumatology.oxfordjournals.org/content/45/2/215.full",
+        "From these estimates the incidences may be adjusted slightly (see notes when a rate is adjusted) ",
+        "to yield reasonable prevalences."
       ]
     },
-    "Wait_For_Injury_Military": {
-      "type": "Delay",
-      "direct_transition": "Call_Injury_Rates_Submodule",
-      "range": {
-        "low": 10,
-        "high": 14,
-        "unit": "months"
-      }
+    "Is_Military": {
+      "type": "Simple",
+      "direct_transition": "Call_Injury_Rates_Submodule"
     },
     "Call_Injury_Rates_Submodule": {
       "type": "CallSubmodule",
       "submodule": "readiness/injury_rates",
       "conditional_transition": [
         {
-          "transition": "Wait_for_Appointment_Military",
+          "transition": "Encounter_for_Injury_Military",
           "condition": {
             "condition_type": "Attribute",
             "attribute": "Injury",
@@ -2777,7 +2759,7 @@
           }
         },
         {
-          "transition": "Military_Check"
+          "transition": "Wait_For_Injury"
         }
       ]
     },
@@ -2798,15 +2780,6 @@
       "type": "EncounterEnd",
       "direct_transition": "Call_Injury_Times_Submodule"
     },
-    "Wait_for_Appointment_Military": {
-      "type": "Delay",
-      "direct_transition": "Encounter_for_Injury_Military",
-      "range": {
-        "low": 0,
-        "high": 21,
-        "unit": "days"
-      }
-    },
     "Call_OTC_Pain_Relief_SubModule_Military": {
       "type": "CallSubmodule",
       "submodule": "medications/otc_pain_reliever",
@@ -2815,7 +2788,7 @@
     "Call_Injury_Times_Submodule": {
       "type": "CallSubmodule",
       "submodule": "readiness/injury_time",
-      "direct_transition": "Military_Check"
+      "direct_transition": "Wait_For_Injury"
     },
     "Military_Check": {
       "type": "Simple",
@@ -2837,6 +2810,15 @@
           "transition": "Is_Civilian"
         }
       ]
+    },
+    "Wait_For_Injury": {
+      "type": "Delay",
+      "range": {
+        "low": 10,
+        "high": 14,
+        "unit": "months"
+      },
+      "direct_transition": "Military_Check"
     }
   }
 }
