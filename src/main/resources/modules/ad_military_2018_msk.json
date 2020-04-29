@@ -288,10 +288,10 @@
       ]
     },
     "Delay": {
-      "type": "Death",
+      "type": "Delay",
       "exact": {
-        "quantity": 2,
-        "unit": "weeks"
+        "quantity": 14,
+        "unit": "days"
       },
       "direct_transition": "End MSK Disorder (M00-M99)"
     },
