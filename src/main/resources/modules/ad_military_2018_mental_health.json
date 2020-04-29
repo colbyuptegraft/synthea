@@ -1,0 +1,313 @@
+{
+  "name": "mental-health_ad-military_2018",
+  "remarks": [
+    "A blank module"
+  ],
+  "states": {
+    "Initial": {
+      "type": "Initial",
+      "direct_transition": "Age Guard"
+    },
+    "Male": {
+      "type": "Simple",
+      "conditional_transition": [
+        {
+          "transition": "Male < 20",
+          "condition": {
+            "condition_type": "Age",
+            "operator": "<",
+            "quantity": 20,
+            "unit": "years",
+            "value": 0
+          }
+        },
+        {
+          "transition": "Male 20-29",
+          "condition": {
+            "condition_type": "And",
+            "conditions": [
+              {
+                "condition_type": "Age",
+                "operator": ">=",
+                "quantity": 20,
+                "unit": "years",
+                "value": 0
+              },
+              {
+                "condition_type": "Age",
+                "operator": "<=",
+                "quantity": 29,
+                "unit": "years",
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Male 30-39",
+          "condition": {
+            "condition_type": "And",
+            "conditions": [
+              {
+                "condition_type": "Age",
+                "operator": ">=",
+                "quantity": 30,
+                "unit": "years",
+                "value": 0
+              },
+              {
+                "condition_type": "Age",
+                "operator": "<=",
+                "quantity": 39,
+                "unit": "years",
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Male 40+"
+        }
+      ]
+    },
+    "Female": {
+      "type": "Simple",
+      "conditional_transition": [
+        {
+          "transition": "Female < 20",
+          "condition": {
+            "condition_type": "Age",
+            "operator": "<",
+            "quantity": 0,
+            "unit": "years",
+            "value": 0
+          }
+        },
+        {
+          "transition": "Female 20-29",
+          "condition": {
+            "condition_type": "And",
+            "conditions": [
+              {
+                "condition_type": "Age",
+                "operator": ">=",
+                "quantity": 20,
+                "unit": "years",
+                "value": 0
+              },
+              {
+                "condition_type": "Age",
+                "operator": "<=",
+                "quantity": 29,
+                "unit": "years",
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Female 30-39",
+          "condition": {
+            "condition_type": "And",
+            "conditions": [
+              {
+                "condition_type": "Age",
+                "operator": ">=",
+                "quantity": 30,
+                "unit": "years",
+                "value": 0
+              },
+              {
+                "condition_type": "Age",
+                "operator": "<=",
+                "quantity": 39,
+                "unit": "years",
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "transition": "Female 40+"
+        }
+      ]
+    },
+    "Male < 20": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Start Mental Health Disorder (F01-F99)",
+          "distribution": 0.19
+        },
+        {
+          "transition": "Quarterly Wait",
+          "distribution": 0.8099999999999999
+        }
+      ]
+    },
+    "Male 20-29": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Start Mental Health Disorder (F01-F99)",
+          "distribution": 0.3
+        },
+        {
+          "transition": "Quarterly Wait",
+          "distribution": 0.7
+        }
+      ]
+    },
+    "Male 40+": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Quarterly Wait",
+          "distribution": 0.43
+        },
+        {
+          "transition": "Start Mental Health Disorder (F01-F99)",
+          "distribution": 0.5700000000000001
+        }
+      ]
+    },
+    "Female < 20": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Start Mental Health Disorder (F01-F99)",
+          "distribution": 0.4
+        },
+        {
+          "transition": "Quarterly Wait",
+          "distribution": 0.6
+        }
+      ]
+    },
+    "Female 20-29": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Start Mental Health Disorder (F01-F99)",
+          "distribution": 0.6
+        },
+        {
+          "transition": "Quarterly Wait",
+          "distribution": 0.4
+        }
+      ]
+    },
+    "Female 30-39": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Start Mental Health Disorder (F01-F99)",
+          "distribution": 0.55
+        },
+        {
+          "transition": "Quarterly Wait",
+          "distribution": 0.44999999999999996
+        }
+      ]
+    },
+    "Female 40+": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Start Mental Health Disorder (F01-F99)",
+          "distribution": 0.69
+        },
+        {
+          "transition": "Quarterly Wait",
+          "distribution": 0.31000000000000005
+        }
+      ]
+    },
+    "Male 30-39": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Start Mental Health Disorder (F01-F99)",
+          "distribution": 0.33
+        },
+        {
+          "transition": "Quarterly Wait",
+          "distribution": 0.6699999999999999
+        }
+      ]
+    },
+    "Age Guard": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "Age",
+        "operator": ">=",
+        "quantity": 17,
+        "unit": "years",
+        "value": 0
+      },
+      "conditional_transition": [
+        {
+          "transition": "Female",
+          "condition": {
+            "condition_type": "Gender",
+            "gender": "F"
+          }
+        },
+        {
+          "transition": "Male"
+        }
+      ]
+    },
+    "Delay": {
+      "type": "Delay",
+      "exact": {
+        "quantity": 14,
+        "unit": "days"
+      },
+      "direct_transition": "End Mental Health Disorder (F01-F99)"
+    },
+    "Start Mental Health Disorder (F01-F99)": {
+      "type": "ConditionOnset",
+      "assign_to_attribute": "mental_health_disorder",
+      "target_encounter": "",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": "225888002|:42752001|=74732009",
+          "display": "Unfit Due to Mental disorder (disorder)"
+        }
+      ],
+      "direct_transition": "Delay"
+    },
+    "End Mental Health Disorder (F01-F99)": {
+      "type": "ConditionEnd",
+      "direct_transition": "Quarterly Wait",
+      "referenced_by_attribute": "mental_health_disorder"
+    },
+    "Quarterly Wait": {
+      "type": "Delay",
+      "range": {
+        "low": 3,
+        "high": 5,
+        "unit": "months"
+      },
+      "conditional_transition": [
+        {
+          "transition": "Terminal",
+          "condition": {
+            "condition_type": "Age",
+            "operator": ">",
+            "quantity": 65,
+            "unit": "years"
+          }
+        },
+        {
+          "transition": "Initial"
+        }
+      ]
+    },
+    "Terminal": {
+      "type": "Terminal"
+    }
+  }
+}
