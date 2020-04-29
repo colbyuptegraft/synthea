@@ -78,7 +78,7 @@
           "condition": {
             "condition_type": "Age",
             "operator": "<",
-            "quantity": 0,
+            "quantity": 20,
             "unit": "years",
             "value": 0
           }
@@ -245,18 +245,7 @@
         "unit": "years",
         "value": 0
       },
-      "conditional_transition": [
-        {
-          "transition": "Female",
-          "condition": {
-            "condition_type": "Gender",
-            "gender": "F"
-          }
-        },
-        {
-          "transition": "Male"
-        }
-      ]
+      "direct_transition": "Start"
     },
     "Start Injury (S00-T98)": {
       "type": "ConditionOnset",
@@ -294,7 +283,7 @@
           }
         },
         {
-          "transition": "Initial"
+          "transition": "Start"
         }
       ]
     },
@@ -308,6 +297,21 @@
     },
     "Terminal": {
       "type": "Terminal"
+    },
+    "Start": {
+      "type": "Simple",
+      "conditional_transition": [
+        {
+          "transition": "Female",
+          "condition": {
+            "condition_type": "Gender",
+            "gender": "F"
+          }
+        },
+        {
+          "transition": "Male"
+        }
+      ]
     }
   }
 }
